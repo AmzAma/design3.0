@@ -7,13 +7,17 @@ import "amfe-flexible";
 import { router }  from "./router";
 import {
   Tabbar,
-  TabbarItem
+  TabbarItem,
+  NavBar,
+  Icon
 } from 'vant';
 
 
 const app = createApp(App)
 app.use(Tabbar);
 app.use(TabbarItem);
+app.use(NavBar);
+app.use(Icon);
 app.use(router);
 app.mount('#app')
 
