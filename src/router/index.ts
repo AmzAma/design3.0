@@ -40,8 +40,13 @@ const routes = [
         path: "/mine",
         component: () => import("../views/Mine.vue"),
       }
-    ]
-  }
+    ],
+   
+  },
+  {
+    path: "/login",
+    component: () => import("../views/Login.vue")
+  } 
 ]
 
 // 3. Create the router instance and pass the `routes` option

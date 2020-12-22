@@ -1,18 +1,21 @@
 <template>
-  <div>
+    <Tab/>
     <router-view />
-  </div>
 </template>
 
 <script lang="ts">
 
 import { defineComponent } from 'vue'
-
+import Tab from "./components/tab.vue"
 export default defineComponent({
   name: 'App',
+  components:{
+    Tab
+  }
 })
 </script>
-<style lang="ts">
+<style lang="scss">
+@import './assets/css/reset';
 #app{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
