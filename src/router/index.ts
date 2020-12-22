@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
+import Home from '../views/Home.vue'
+
 // 1. Define route components.
 // These can be imported from other files
 
@@ -11,9 +13,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "/home",
-    component: () => import("../views/Home.vue"),
-    children: [
+    redirect: "/index",
+    component: Home,
+    children: [ 
       {
         path: "/home",
         component: () => import("../views/Home.vue")
@@ -21,6 +23,10 @@ const routes = [
       {
         path: "/index",
         component: () => import("../views/Index.vue")
+      },
+      {
+        path: "/add",
+        component: () => import("../views/Add.vue")
       },
       {
         path: "/design",

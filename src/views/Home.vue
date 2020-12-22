@@ -1,6 +1,6 @@
 <template>
   <div>
-   
+    <router-view />
     <van-tabbar v-model="active" route :placeholder="true">
       <van-tabbar-item
         v-for="item in tabbarList"
