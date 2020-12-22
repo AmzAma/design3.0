@@ -1,8 +1,6 @@
 <template>
   <div class="index">
     <div class="top"> 
-    <van-nav-bar title="首页" :fixed="true" :placeholder="true" />
-
      <div style="position:relative">
       <van-search
         v-model="value"
@@ -44,6 +42,10 @@ export default defineComponent({
 </script>
 
 <style>
+.index{
+  margin:0;
+  padding:0;
+}
 .top{
   width: 100%;
   height:300px;
