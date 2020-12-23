@@ -5,7 +5,7 @@ import { Toast } from "vant";
 
 // 创建实例
 const instance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://10.31.162.84:3001",
   timeout: 10000
 });
 
