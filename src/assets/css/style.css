@@ -10,3 +10,8 @@
 .van-tabbar-item:nth-child(3) .van-tabbar-item__icon .van-icon-plus::before {
   transform: translateY(10px);
 }
+ .index .van-tab {
+  background: #f6483f;
+  color: #fff;
+  font-weight: 900;
+}
