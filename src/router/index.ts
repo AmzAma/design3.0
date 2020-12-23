@@ -18,11 +18,11 @@ const routes = [
     children: [ 
       {
         path: "/home",
-        component: () => import("../views/Home.vue")
+        component: () => import("../views/Home.vue"),
       },
       {
         path: "/index",
-        component: () => import("../views/Index.vue")
+        component: () => import("../views/Index.vue"),
       },
       {
         path: "/add",
@@ -40,8 +40,13 @@ const routes = [
         path: "/mine",
         component: () => import("../views/Mine.vue"),
       }
-    ]
-  }
+    ],
+   
+  },
+  {
+    path: "/login",
+    component: () => import("../views/Login.vue")
+  } 
 ]
 
 // 3. Create the router instance and pass the `routes` option
