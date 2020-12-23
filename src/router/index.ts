@@ -25,10 +25,6 @@ const routes = [
         component: () => import("../views/Index.vue"),
       },
       {
-        path: "/add",
-        component: () => import("../views/Add.vue")
-      },
-      {
         path: "/design",
         component: () => import("../views/Design.vue")
       },
@@ -46,7 +42,15 @@ const routes = [
   {
     path: "/login",
     component: () => import("../views/Login.vue")
-  } 
+  },
+  {
+    path: "/add",
+    component: () => import("../views/Add.vue")
+  },
+  {
+    path: "/comment",
+    component: () => import("../views/Comment.vue")
+  }
 ]
 
 // 3. Create the router instance and pass the `routes` option

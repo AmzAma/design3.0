@@ -1,0 +1,16 @@
+//公共样式
+
+//底部导航
+.van-tabbar-item:nth-child(3){
+  .van-tabbar-item__icon{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 20px;
+    .van-icon-plus::before{
+      transform: translateY(10px);
+    }
+  }
+}

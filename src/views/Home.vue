@@ -37,8 +37,7 @@ export default defineComponent({
           dot: false
         },
         {
-          title: "+",
-          icon: "friends-o",
+          icon: "plus",
           to: "/add",
           dot: false
         },
@@ -63,3 +62,6 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+</style>
