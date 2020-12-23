@@ -47,7 +47,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="ts">
+<style lang="scss" scoped>
   .van-nav-bar .van-icon {
     color: rgb(0,0,0);
   }
