@@ -34,7 +34,7 @@ export default defineComponent({
   },
   methods:{
       async getBannerList() {
-      const res = await getBannerListApi();
+      const res= await getBannerListApi();
       this.swiperList = res.results[0].homeimg;
       console.log(this.swiperList)
     }

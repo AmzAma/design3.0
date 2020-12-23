@@ -42,7 +42,7 @@ instance.interceptors.response.use(
 );
 
 const http = {
-  get(url, params) {
+  get(url:any, params:any):any {
    
     return new Promise((resolve, reject) => {
       

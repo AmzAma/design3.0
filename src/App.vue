@@ -1,16 +1,13 @@
 <template>
-    <Tab/>
     <router-view />
 </template>
 
 <script lang="ts">
 
 import { defineComponent } from 'vue'
-import Tab from "./components/tab.vue"
 export default defineComponent({
   name: 'App',
   components:{
-    Tab
   }
 })
 </script>

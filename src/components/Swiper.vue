@@ -4,9 +4,6 @@
     :autoplay="autoplay"
     :indicatorColor="indicatorColor"
   >
-    <van-swipe-item v-for="item in swiperList" :key="item">
-      <img src="https://pic50.t8tcdn.com/adcms/ad/67f6851cd104db43ea6ed7648a044819.jpg" alt="" />
-    </van-swipe-item>
   </van-swipe>
 </template>
 
@@ -20,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="ts">
+<style>
 .my-swipe .van-swipe-item{
   color: #fff;
   height: 200px;
