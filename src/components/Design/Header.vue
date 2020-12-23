@@ -51,5 +51,4 @@ export default defineComponent({
   .van-nav-bar .van-icon {
     color: rgb(0,0,0);
   }
- 
 </style>
