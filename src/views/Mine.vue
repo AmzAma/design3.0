@@ -20,14 +20,20 @@
         </div>
       </div>
       <div class="main">
-        <div class="">
+        <div class="cell">
           <van-cell title="单元格" is-link />
           <van-cell title="单元格" is-link />
         </div>
-       <div>
+       <div class="cell">
           <van-cell title="单元格" is-link />
           <van-cell title="单元格" is-link />
+           <van-cell title="单元格" is-link />
+          <van-cell title="单元格" is-link />
+           <van-cell title="单元格" is-link />
        </div>
+       <div class="cell">
+          <van-cell title="单元格" is-link />
+        </div>
       </div>
     </div>
   </div>
@@ -77,5 +83,9 @@ export default {
        }
      }
    }
+   
  }
+ .cell{
+     margin-bottom: 10px;
+   }
 </style>
