@@ -26,7 +26,7 @@ const routes = [
       },
       {
         path: "/design",
-        component: () => import("../views/Design.vue")
+        component: () => import("../views/Design.vue"),
       },
       {
         path: "/message",
@@ -37,7 +37,6 @@ const routes = [
         component: () => import("../views/Mine.vue"),
       }
     ],
-   
   },
   {
     path: "/login",
@@ -50,6 +49,10 @@ const routes = [
   {
     path: "/comment",
     component: () => import("../views/Comment.vue")
+  },
+  {
+    path: "/designer",
+    component: () => import("../views/Designer.vue"),
   }
 ]
 

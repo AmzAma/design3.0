@@ -13,11 +13,13 @@ import {
   Icon,
   Field,
   Button,
-  NavBar,
   Grid,
   GridItem,
   SwipeCell,
   Card,
+  DropdownMenu,
+  DropdownItem,
+  NavBar,
   Image as VanImage
 } from 'vant';
 
@@ -33,6 +35,9 @@ app.use(Grid);
 app.use(GridItem);
 app.use(SwipeCell);
 app.use(Card);
+app.use(DropdownMenu);
+app.use(DropdownItem);
+app.use(NavBar);
 app.use(VanImage);
 app.use(router);
 app.mount('#app')
