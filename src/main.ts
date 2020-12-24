@@ -27,7 +27,9 @@ import {
   Grid,
   GridItem,
   NavBar,
-  PullRefresh 
+  PullRefresh,
+  Cell,
+  CellGroup 
 } from 'vant';
 
 
@@ -36,6 +38,9 @@ app.use(Tab);
 app.use(Tabs);
 app.use(Tabbar);
 app.use(TabbarItem);
+app.use(Tab);
+app.use(VanImage);
+app.use(Tabs)
 app.use(Field);
 app.use(Icon);
 app.use(Button);
@@ -56,6 +61,11 @@ app.use(GridItem);
 app.use(NavBar);
 app.use(VanImage);
 app.use(PullRefresh);
+app.use(Cell);
+app.use(CellGroup);
+app.use(router);
+app.mount('#app')
+
 
 app.use(router);
 app.mount('#app')
