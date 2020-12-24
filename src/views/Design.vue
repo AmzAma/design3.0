@@ -1,5 +1,7 @@
 <template>
+  <!-- 头部 -->
   <ds-header />
+  <!-- 内容 -->
   <ds-main />
 </template>
 
