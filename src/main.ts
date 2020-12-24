@@ -27,6 +27,7 @@ import {
   Grid,
   GridItem,
   NavBar,
+  PullRefresh 
 } from 'vant';
 
 
@@ -54,6 +55,7 @@ app.use(Grid);
 app.use(GridItem);
 app.use(NavBar);
 app.use(VanImage);
+app.use(PullRefresh);
 
 app.use(router);
 app.mount('#app')

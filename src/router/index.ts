@@ -51,6 +51,10 @@ const routes = [
     component: () => import("../views/Comment.vue")
   },
   {
+    path: "/fabulous",
+    component: () => import("../views/Fabulous.vue"),
+  },
+  {
     path: "/designer",
     component: () => import("../views/Designer.vue"),
   }

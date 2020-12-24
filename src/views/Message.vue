@@ -1,17 +1,18 @@
 <template>
   <div class="msg">
+    <!-- 顶部 -->
     <van-nav-bar title="消息中心" :placeholder ="true" :fixed="true" :border="true">
       <template #right>
         <van-icon name="search" size="18" />
       </template>
     </van-nav-bar>
-
+    <!-- 头部点赞 -->
     <van-grid :column-num="3" :border="false" >
       <van-grid-item icon="photo-o" text="评论和@" @click="goToComment" />
-      <van-grid-item icon="photo-o" text="赞和收藏" />
+      <van-grid-item icon="photo-o" text="赞和收藏" @click="goToFabulous" />
       <van-grid-item icon="photo-o" text="系统通知" />
     </van-grid>
-    
+    <!-- 消息列表 -->
     <van-swipe-cell :before-close="beforeClose">
       <div class="cell-left">
         <van-image
@@ -33,6 +34,7 @@
       </template>
     </van-swipe-cell>
 
+    
   </div>
 </template>
 
@@ -63,6 +65,9 @@ export default defineComponent({
   methods: {
     goToComment(){
       this.$router.push("/comment");
+    },
+    goToFabulous(){
+      this.$router.push("/fabulous");
     }
   }
 });
@@ -71,7 +76,7 @@ export default defineComponent({
 <style lang="scss" scoped>
   .msg {
     width: 100%;
-    min-height: 100%;
+    max-height: 812px;
     background-color: rgb(248,248,248);
   
     .van-nav-bar{
@@ -126,8 +131,6 @@ export default defineComponent({
         height: 70px;
       }
     }
-    
-    
   }
    
   
