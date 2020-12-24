@@ -1,41 +1,12 @@
 <template>
   <div class="index">
-   <Head :navList="navList" />
-      <!-- 轮播 -->
+    <Head :navList="navList" />
+    <!-- 轮播 -->
     <Swiper :swiperList="swiperList"/>
-    <!-- 8个 -->
-    <van-grid
-      :border="false"
-      :column-num="4">
-    <van-grid-item
-      v-for="(item, index) in gridList" 
-      :key="index" 
-    >
-    <van-image 
-     :src="item.gridimgs" />
-    <van-grid-item  :text="item.gridname" />
-  </van-grid-item>
-</van-grid>
-    <!-- 设计 -->
-   <div
-    v-for="(item, index) in designList" :key="index" >
-     <van-image :src="item.designpic" class="touxiang" />
-     <p class="title">{{item.designtitle}}</p>
-     <button>关注</button>
-      
-     <div>
-     <van-image :src="item.designimgs" class="imgs" />
-     <span class="zw">整屋</span>
-     <p class="text">{{item.designtext}}</p>
-     <p class="span">{{item.designspan}}</p>
-     </div> 
-     
-     <div class="icon">
-     <van-icon name="cart-o" />
-     <van-icon name="comment-o" />
-     <van-icon name="star-o" />  
-     </div>
-   </div>
+    <div class="like">
+
+    </div>
+
   </div>
 </template>
 
@@ -45,18 +16,12 @@ import Head from "../components/Index/Head.vue";
 import { ref } from 'vue';
 import { getBannerListApi} from "../utils/api";
 
-import { getGridListApi} from "../utils/api";
-
-import { getDesignListApi} from "../utils/api";
-
 import { Toast } from 'vant'
 import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
       swiperList: [],
-      gridList:[],
-      designList:[],
       navList:[
         {
           text: "我的关注",
@@ -76,26 +41,15 @@ export default defineComponent({
   mounted() {
     this.getBannerList();
 
-    this.getGridList();
+  },
+  computed:{
 
-    this.getDesignList();
   },
   methods:{
       async getBannerList() {
       const res= await getBannerListApi();
       this.swiperList = res.results[0].homeimg;
     },
-
-      async getGridList() {
-      const res= await getGridListApi();
-      this.gridList = res.results[0].gridList;
-    },
-
-      async getDesignList() {
-      const res= await getDesignListApi();
-      this.designList = res.results[0].designList;
-    },
-
     onClickRight() {
       Toast('按钮');
     },
@@ -103,9 +57,7 @@ export default defineComponent({
   components: {
     Swiper,
     Head,
-  
   }
-
 });
 </script>
 
