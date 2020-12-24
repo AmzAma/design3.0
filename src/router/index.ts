@@ -19,11 +19,19 @@ const routes = [
       {
         path: "/home",
         component: () => import("../views/Home.vue"),
+        redirect:"/home/index",
+        children:[
+        {
+          path: "/homefollow",
+          component: () => import("../views/HomeFollow.vue"),
+        },
+        {
+          path: "/index",
+          component: () => import("../views/Index.vue"),
+        },
+      ]
       },
-      {
-        path: "/index",
-        component: () => import("../views/Index.vue"),
-      },
+      
       {
         path: "/design",
         component: () => import("../views/Design.vue"),
