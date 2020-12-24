@@ -1,12 +1,24 @@
 <template>
   <div class="mine">
     <div class="title">
+      <div class="sign">
+        <p>签到</p>
+      </div>
       <van-image
           round
           width="59px"
           height="59px"
           src="https://img.yzcdn.cn/vant/cat.jpeg"
         />
+      <div class="name">
+        <p>178abeac88585</p>
+      </div>  
+      <div class="ID">
+        <p>ID:10505704 金币0</p>
+      </div>
+      <div class="change">
+        <p>修改资料</p>
+      </div>
     </div>
     <div>
       <div class="wrop">
@@ -46,14 +58,57 @@ export default {
 </script>
 
 
-<style lang="scss" >
+<style lang="scss" scoped>
  .mine{
+   
    background: #eee;
    .title{
-     width: 100%;
      height: 206px;
      background: #F6483F;
      position: relative;
+     .sign{
+     font-size: 14px;
+     color: #fff;
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     border-radius: 10px;
+     border: 1px solid #fff;
+     padding: 5px 20px;
+   }
+   .name{
+     position: absolute;
+     top:110px;
+     width:375px;
+     text-align: center;
+     color: #fff;
+     p{
+       font-size: 16px;
+       font-weight: 900px;
+     }
+   }
+   .ID{
+      position: absolute;
+     top:130px;
+     width:375px;
+     text-align: center;
+     color: #fff;
+     font-size: 12px;
+   }
+   .change{
+      position: absolute;
+      top:160px;
+      left: 145px;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      width: 86px;
+      height: 25px;
+      border: 1px solid #fff;
+      line-height: 25px;
+      border-radius: 20px;
+      background: rgba($color: #fff, $alpha: 0.3);
+   }
    }
    .van-image--round{
      position:absolute;
@@ -64,7 +119,7 @@ export default {
     font-size: 12x;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    // text-align: center;
     padding: 0 10px;
      .wrop-t{
        width: 175px;
@@ -74,7 +129,7 @@ export default {
        color: #F6483F;
        line-height: 40px;
        display: flex;
-       text-align: center;
+      //  text-align: center;
        margin: 9px 0;
        .van-icon{
         font-size: 20px;
