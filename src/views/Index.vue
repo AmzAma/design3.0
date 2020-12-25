@@ -18,7 +18,7 @@
 </van-grid>
     <!-- 设计 -->
    <div
-    v-for="(item, index) in designList" :key="index" >
+    v-for="(item, index) in detailsList" :key="index" >
      <van-image :src="item.designpic" class="touxiang" />
      <p class="title">{{item.designtitle}}</p>
      <button>关注</button>
@@ -43,11 +43,7 @@
 import Swiper from "../components/Index/Swiper.vue";
 import Head from "../components/Index/Head.vue";
 import { ref } from 'vue';
-import { getBannerListApi} from "../utils/api";
-
-import { getGridListApi} from "../utils/api";
-
-import { getDesignListApi} from "../utils/api";
+import { getBannerListApi, getGridListApi, getDesignListApi, getVerifyApi} from "../utils/api";
 
 import { Toast } from 'vant'
 import { defineComponent } from 'vue'
@@ -56,7 +52,8 @@ export default defineComponent({
     return {
       swiperList: [],
       gridList:[],
-      designList:[],
+      detailsList:[],
+      
       navList:[
         {
           text: "我的关注",
@@ -69,16 +66,13 @@ export default defineComponent({
       ],
     };
   },
-  // setup() {
-  //   const active = ref(0);
-  //   return { active };
-  // },
   mounted() {
     this.getBannerList();
 
     this.getGridList();
 
     this.getDesignList();
+
   },
   methods:{
       async getBannerList() {
@@ -97,15 +91,14 @@ export default defineComponent({
       this.designList = res.results[0].designList;
       console.log(res);
     },
-
     onClickRight() {
       Toast('按钮');
     },
   },
+
   components: {
     Swiper,
-    Head,
-  
+    Head
   }
 
 });

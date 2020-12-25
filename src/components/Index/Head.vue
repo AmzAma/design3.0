@@ -1,5 +1,4 @@
 <template>
-
 <div class="index">
   <div class="top"> 
      <div style="position:relative">
@@ -12,7 +11,6 @@
     </div>   
     </div>
     <!-- 切换 -->
-  
    <van-tabs color="#fff">
       <van-tab
        v-for="item in navList"
