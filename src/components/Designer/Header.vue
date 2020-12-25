@@ -1,5 +1,5 @@
 <template>
-  <van-nav-bar left-arrow>
+  <van-nav-bar left-arrow :border="false">
     <template #right>
       <van-icon name="ellipsis" color="#000"/>
     </template>
@@ -35,26 +35,6 @@
       </div>
     </li>
   </ul>
-  <van-nav-bar left-text="案例" size="20">
-    <template #right>
-      <span class="an-p">18篇</span>
-      <van-icon name="arrow" color="#999"/>
-    </template>
-  </van-nav-bar>
-  <van-swipe :loop="false" :width="350" :height="100" :show-indicators="false">
-    <van-swipe-item>
-      <van-image width="100%" height="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    </van-swipe-item>
-    <van-swipe-item>
-      <van-image width="100%" height="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    </van-swipe-item>
-    <van-swipe-item>
-      <van-image width="100%" height="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    </van-swipe-item>
-    <van-swipe-item>
-      <van-image width="100%" height="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    </van-swipe-item>
-  </van-swipe>
 </template>
 
 <script lang="ts">
@@ -124,7 +104,7 @@ export default defineComponent({
         &:nth-child(2){
           font-size: 8px;
           text-align: left;
-          margin-top: 3px;
+          margin-top: 5px;
         }
       }
       &:nth-child(2){
@@ -137,19 +117,5 @@ export default defineComponent({
         }
       }
     }
-  }
-  .van-swipe{
-    .van-swipe-item{
-      padding-left: 10px;
-    }
-  }
-  .van-nav-bar__text{
-    font-size: 18px;
-    color: #000;
-  }
-  .an-p{
-    font-size: 10px;
-    margin-right: 10px;
-    color: #999;
   }
 </style>
