@@ -1,8 +1,5 @@
 <template>
-<<<<<<< HEAD
-=======
   <div>
->>>>>>> artist
     <router-view />
   </div>
 </template>
@@ -12,10 +9,6 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'App',
   components:{
-<<<<<<< HEAD
-=======
-   
->>>>>>> artist
   }
 })
 </script>

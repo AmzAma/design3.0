@@ -1,93 +1,65 @@
 <template>
-  <div class="index">
-    <Head :navList="navList" />
-    <!-- 轮播 -->
-    <Swiper :swiperList="swiperList"/>
-   <!-- 换一换 -->
-    <Exchange
-    :designerList="designerList"
-    :desShowImg="desShowImg"
-    />
-  </div>
+   <div class="like">
+      <div class="title">
+     <p>猜你喜欢</p>
+     <span @click="change">换一换</span>
+     </div>
+     <div class="box"
+      v-for="(item, index) in showArr"
+      :key="index">
+      <div class="top">
+     <van-image :src="item.desPortait" class="touxiang" />
+     <div>
+     <p class="name">{{item.desName}}</p>
+     <span>受业主欢迎设计师</span>
+     </div>
+     <button>关注</button>
+      </div>
+      <div class="bottom">
+        <div v-for="item in desShowImg[index]" :key="item">
+          <van-image :src="item" />
+        </div>
+      </div>
+     </div>
+    </div>
 </template>
 
-<script lang="ts"> 
-import Swiper from "../components/Index/Swiper.vue";
-import Head from "../components/Index/Head.vue";
-import Exchange from "../components/Index/Exchange.vue";
-import { Toast } from "vant";
-import { ref } from 'vue';
-import { getBannerListApi} from "../utils/api";
-import { getDesignerListApi} from "../utils/api";
-
+<script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
+  props: {
+    designerList: Array,
+    desShowImg: Array
+  },
   data() {
     return {
-      swiperList: [],
-      designerList:[],
-      navList:[
-        {
-          text: "我的关注",
-          path: "/homefollow"
-        },
-        {
-          text: "个性推荐",
-          path: "/index"
-        }
-      ],
-      desShowImg:[],
-      count: 0,
-      ids: [],
-      start: 0,
-      num: 5
-    };
+      arr: [] as number[]
+    }
   },
-  mounted() {
-    this.getBannerList();
-
-    this.getDesignerList();
-
-    this.getDesShowImgList();
+  watch: {
+    designerList() {
+      this.change()
+    }
   },
-  computed:{
-    
+  computed: {
+    showArr(): any[] {
+      return this.arr.map(item => {
+        return this.designerList[item]
+      })
+    }
   },
-  methods:{
-      async getBannerList() {
-      const res= await getBannerListApi();
-      this.swiperList = res.results[0].homeimg;
-    },
-
-    async getDesignerList() {
-      const res= await getDesignerListApi();
-      this.designerList = res.results[0].designerList;
-    },
-
-    async getDesShowImgList() {
-      const res= await getDesignerListApi();
-      this.desShowImg = res.results[1].picList;
-      console.log(this.desShowImg)
-    },
-
-    onClickRight() {
-      Toast('按钮');
-    },
-
-  },
-  components: {
-    Swiper,
-    Head,
-    Exchange
+  methods: {
+    change() {
+      let num: number = Math.floor(Math.random() * (this.designerList.length - 1))
+      this.arr = [num, num + 1]
+      console.log('arr', this.arr)
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.index{
-  margin:0;
-  padding:0; 
-  .like{
+ .like{
     .title{
       width: 94%;
       height:50px;
@@ -165,5 +137,4 @@ export default defineComponent({
     }    
      }
     }
-   }
 </style>
