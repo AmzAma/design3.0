@@ -7,3 +7,5 @@ export const getGridListApi:any = (params:any):any => http.get("/index/getGrid",
 export const getDesignListApi:any = (params:any):any => http.get("/index/getDesign", params);
 //设计师页面
 export const getDesignerListApi:any = (params:any):any => http.get("/index/getDesigner", params);
+//消息页面
+export const getMessageListApi:any = (params:any):any => http.get("/message/getMessage", params);

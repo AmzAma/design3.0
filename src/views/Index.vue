@@ -89,11 +89,13 @@ export default defineComponent({
       async getGridList() {
       const res= await getGridListApi();
       this.gridList = res.results[0].gridList;
+      console.log(res);
     },
 
       async getDesignList() {
       const res= await getDesignListApi();
       this.designList = res.results[0].designList;
+      console.log(res);
     },
 
     onClickRight() {

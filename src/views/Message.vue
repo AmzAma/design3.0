@@ -13,21 +13,21 @@
       <van-grid-item icon="photo-o" text="系统通知" />
     </van-grid>
     <!-- 消息列表 -->
-    <van-swipe-cell :before-close="beforeClose">
+    <van-swipe-cell :before-close="beforeClose" v-for="(item,index) in cardList" :key="index">
       <div class="cell-left">
         <van-image
           round
-          width="36px"
-          height="36px"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          width="35px"
+          height="35px"
+          :src="item.portrait"
         />
       </div>
       <div class="cell-right">
         <div class="cell-title">
-          小本头条
-          <span>今天08:30</span>
+          {{item.name}}
+          <span>{{item.create_time}}</span>
         </div>
-        <span>212m暖暖朴朴风，三人一喵的理想家！</span> 
+        <span>{{item.msgTitle}}</span> 
       </div>
       <template #right>
         <van-button square text="删除" type="danger" class="delete-button" />
@@ -41,8 +41,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Dialog } from 'vant';
+import { getMessageListApi} from "../utils/api";
 
 export default defineComponent({
+  data(){
+    return{
+      cardList: []
+    }
+  },
   setup() {
     // position 为关闭时点击的位置
     const beforeClose = ({ position }) => {
@@ -62,13 +68,21 @@ export default defineComponent({
 
     return { beforeClose };
   },
+  mounted(){
+    this.getMessageList();
+  },
   methods: {
     goToComment(){
       this.$router.push("/comment");
     },
     goToFabulous(){
       this.$router.push("/fabulous");
-    }
+    },
+    async getMessageList() {
+      const res= await getMessageListApi();
+      this.cardList = res.results[0].cardList;  
+      console.log(res);
+    },
   }
 });
 </script>
@@ -87,6 +101,7 @@ export default defineComponent({
     
     .van-grid {
       padding-bottom: 10px;
+      height: 85px;
     }
 
     .van-swipe-cell {
@@ -112,19 +127,29 @@ export default defineComponent({
         border-bottom: 5px solid #ccc;
 
         .cell-title{
-          font-size: 16px;
           margin-top: 15px;
-          margin-bottom: 5px;
+          margin-bottom: 7px;      
+          font-size: 15px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #000;
 
           span{
             display: block;
             float: right;
+            font-size: 11px;
+            font-family: PingFang SC;
+            font-weight: 400;
+            color: #666666;
+            margin-right: 15px;
           }
         }
         span{
           display: block;
-          font-size: 12px;
-          color: #ccc;
+          font-size: 11px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #666666;
         }
       }
       .delete-button {
