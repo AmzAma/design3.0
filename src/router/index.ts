@@ -43,6 +43,9 @@ const routes = [
       {
         path: "/mine",
         component: () => import("../views/Mine.vue"),
+        beforEnter(){
+          
+        }
       }
     ],
   },

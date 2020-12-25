@@ -21,7 +21,7 @@ import {
   Card,
   DropdownMenu,
   DropdownItem,
-  Search ,
+  Search,
   Swipe,
   SwipeItem,
   Grid,
