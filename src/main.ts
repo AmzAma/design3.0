@@ -21,7 +21,7 @@ import {
   Card,
   DropdownMenu,
   DropdownItem,
-  Search ,
+  Search,
   Swipe,
   SwipeItem,
   Grid,
@@ -63,9 +63,6 @@ app.use(VanImage);
 app.use(PullRefresh);
 app.use(Cell);
 app.use(CellGroup);
-app.use(router);
-app.mount('#app')
-
 
 app.use(router);
 app.mount('#app')

@@ -7,3 +7,5 @@ export const getGridListApi:any = (params:any):any => http.get("/index/getGrid",
 export const getDesignListApi:any = (params:any):any => http.get("/index/getDesign", params);
 //设计师页面
 export const getDesignerListApi:any = (params:any):any => http.get("/index/getDesigner", params);
+// 注册登陆
+export const getVerifyApi:any = (params:any):any => http.post("/register", params);

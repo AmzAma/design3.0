@@ -92,7 +92,7 @@ export default defineComponent({
     },
 
       async getDesignList() {
-      const res= await getDesignListApi();
+      const res= await getVerifyApi();
       this.designList = res.results[0].designList;
     },
 
