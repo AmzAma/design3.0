@@ -35,3 +35,11 @@
   font-size: 18px;
   color: #000;
 }
+
+//设计师头部返回箭头
+.des-hd {
+  .van-icon-arrow-left::before {
+    content: "";
+    color: #000;
+  }
+}

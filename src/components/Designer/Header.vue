@@ -1,40 +1,42 @@
 <template>
-  <van-nav-bar left-arrow :border="false">
-    <template #right>
-      <van-icon name="ellipsis" color="#000"/>
-    </template>
-  </van-nav-bar>
-  <ul class="des-header">
-    <li>
-      <van-image width="1.5rem" height="1.5rem" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    </li>
-    <li>
-      <p>方界设计</p>
-      <p><van-icon name="vip-card" color="red" /></p>
-      <p><van-icon name="location-o" />广东深圳</p>
-    </li>
-    <li>
-      <p>
-        <span>关注</span>
-      </p>
-    </li>
-  </ul>
-  <ul class="des-charge">
-    <li>
-      <p>￥50-80/m<sup>2</sup></p>
-      <p>设计收费</p>
-    </li>
-    <li>
-      <div>
-        <p>135</p>
-        <p>粉丝</p>
-      </div>
-      <div>
-        <p>149</p>
-        <p>预约</p>
-      </div>
-    </li>
-  </ul>
+  <div class="des-hd">
+    <van-nav-bar left-arrow :border="false">
+      <template #right>
+        <van-icon name="ellipsis" color="#000"/>
+      </template>
+    </van-nav-bar>
+    <ul class="des-header">
+      <li>
+        <van-image width="1.5rem" height="1.5rem" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+      </li>
+      <li>
+        <p>方界设计</p>
+        <p><van-icon name="vip-card" color="red" /></p>
+        <p><van-icon name="location-o" />广东深圳</p>
+      </li>
+      <li>
+        <p>
+          <span>关注</span>
+        </p>
+      </li>
+    </ul>
+    <ul class="des-charge">
+      <li>
+        <p>￥50-80/m<sup>2</sup></p>
+        <p>设计收费</p>
+      </li>
+      <li>
+        <div>
+          <p>135</p>
+          <p>粉丝</p>
+        </div>
+        <div>
+          <p>149</p>
+          <p>预约</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
@@ -44,11 +46,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" >
-  .van-icon-arrow-left::before {
-    content: "";
-    color: #000;
-  }
+<style lang="scss" scoped>
   .des-header{
     overflow: hidden;
     padding: 0 15px;

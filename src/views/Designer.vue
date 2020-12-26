@@ -1,10 +1,17 @@
 <template>
+  <!-- 头部 -->
   <des-header />
+  <!-- 案例 -->
   <des-case />
+  <!-- 水平线 -->
   <div class="l"></div>
+  <!-- 博文 -->
   <des-blog />
+  <!-- 水平线 -->
   <div class="l"></div>
+  <!-- 底部提示 -->
   <div class="dse-footer">——到底啦——</div>
+  <!-- 底部按钮 -->
   <des-footer />
 </template>
 

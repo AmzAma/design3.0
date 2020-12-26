@@ -21,17 +21,16 @@ const routes = [
         component: () => import("../views/Home.vue"),
         redirect:"/home/index",
         children:[
-        {
-          path: "/homefollow",
-          component: () => import("../views/HomeFollow.vue"),
-        },
-        {
-          path: "/index",
-          component: () => import("../views/Index.vue"),
-        },
-      ]
+          {
+            path: "/homefollow",
+            component: () => import("../views/HomeFollow.vue"),
+          },
+          {
+            path: "/index",
+            component: () => import("../views/Index.vue"),
+          },
+        ]
       },
-      
       {
         path: "/design",
         component: () => import("../views/Design.vue"),
@@ -68,7 +67,11 @@ const routes = [
   {
     path: "/designer",
     component: () => import("../views/Designer.vue"),
-  }
+  },
+  {
+    path: "/caseexhibition",
+    component: () => import("../views/CaseExhibition.vue"),
+  },
 ]
 
 // 3. Create the router instance and pass the `routes` option
