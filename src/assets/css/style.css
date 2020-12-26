@@ -1,3 +1,10 @@
+.van-nav-bar__title {
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  font-size: 16px;
+}
+
 .van-tabbar-item:nth-child(3) .van-tabbar-item__icon {
   width: 40px;
   height: 40px;
@@ -17,11 +24,15 @@
   font-weight: 900;
 }
 
-.msg .van-nav-bar__title {
+.index .van-pull-refresh__head {
+  background-color: red;
+}
+
+.msg .van-grid-item__text {
+  font-size: 12px;
   font-family: PingFang SC;
-  font-weight: 600;
+  font-weight: 400;
   color: #333333;
-  font-size: 16px;
 }
 
 .case .van-nav-bar__text, .blog .van-nav-bar__text {

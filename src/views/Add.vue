@@ -14,19 +14,19 @@ export default defineComponent({
     return {
       gridList: [
         {
-          icon:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg&refer=http%3A%2F%2Fmedia-cdn.tripadvisor.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611405214&t=35007edb0b4ca07f46d9fd69619f9aad",
+          icon:"http://42.192.149.116:3001/images/add1.png",
           text:"发布问题"
         },
         {
-          icon:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg&refer=http%3A%2F%2Fmedia-cdn.tripadvisor.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611405214&t=35007edb0b4ca07f46d9fd69619f9aad",
+          icon:"http://42.192.149.116:3001/images/add1.png",
           text:"回答问题"
         },
         {
-          icon:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg&refer=http%3A%2F%2Fmedia-cdn.tripadvisor.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611405214&t=35007edb0b4ca07f46d9fd69619f9aad",
+          icon:"http://42.192.149.116:3001/images/add1.png",
           text:"发布美图"
         },
         {
-          icon:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg&refer=http%3A%2F%2Fmedia-cdn.tripadvisor.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611405214&t=35007edb0b4ca07f46d9fd69619f9aad",
+          icon:"http://42.192.149.116:3001/images/add1.png",
         }
       ]
     }

@@ -1,5 +1,13 @@
 //公共样式
 
+//全局导航
+.van-nav-bar__title{
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  font-size: 16px;
+}
+
 //底部导航
 .van-tabbar-item:nth-child(3){
   .van-tabbar-item__icon{
@@ -21,15 +29,19 @@
   color:#fff;
   font-weight: 900;
 }
-
-//Message消息页
-  //导航
-.msg .van-nav-bar__title{
-  font-family: PingFang SC;
-  font-weight: 600;
-  color: #333333;
-  font-size: 16px;
+//首页下拉刷新红色背景
+.index .van-pull-refresh__head{
+  background-color: red;
 }
+//消息页icon文字
+.msg .van-grid-item__text{
+  font-size: 12px;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+
+
 //案例和博文标题
 .case .van-nav-bar__text,.blog .van-nav-bar__text{
   font-size: 18px;
