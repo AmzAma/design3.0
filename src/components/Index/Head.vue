@@ -60,5 +60,9 @@ export default defineComponent({
     background-color: rgba(255, 255, 255, 0.1);
     flex: 1 1 0%;
     border-radius: 0.05333rem;
-}}}}}
+}
+}
+}
+  }
+}
 </style>

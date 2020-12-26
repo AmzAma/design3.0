@@ -1,29 +1,16 @@
 <template>
-  <div class="index">
-   <Head :navList="navList" />
-      <!-- 轮播 -->
-    <Swiper :swiperList="swiperList"/>
-    <!-- 8个 -->
-    <van-grid
-      :border="false"
-      :column-num="4">
-    <van-grid-item
-      v-for="(item, index) in gridList" 
-      :key="index" 
-    >
-    <van-image 
-     :src="item.gridimgs" />
-    <van-grid-item  :text="item.gridname" />
-  </van-grid-item>
-</van-grid>
-    <!-- 设计 -->
-   <div
+   <div class="like">
+      <div class="title">
+     <p>为你推荐</p>
+     </div>
+     
+     <div
     v-for="(item, index) in detailsList" :key="index" >
      <van-image :src="item.designpic" class="touxiang" />
-     <p class="title">{{item.designtitle}}</p>
+     <p class="wenben">{{item.designtitle}}</p>
      <button>关注</button>
       
-     <div @click="goToParticular(item.particularId)">
+     <div>
      <van-image :src="item.designimgs" class="imgs" />
      <span class="zw">整屋</span>
      <p class="text">{{item.designtext}}</p>
@@ -36,80 +23,32 @@
      <van-icon name="star-o" />  
      </div>
    </div>
-  </div>
+    </div>
 </template>
 
-<script lang="ts"> 
-import Swiper from "../components/Index/Swiper.vue";
-import Head from "../components/Index/Head.vue";
-
-
-import { ref } from 'vue';
-import { getBannerListApi, getGridListApi, getDesignListApi, getVerifyApi} from "../utils/api";
-
+<script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  data() {
-    return {
-      swiperList: [],
-      gridList:[],
-      detailsList:[],
-      
-      navList:[
-        {
-          text: "我的关注",
-          path: "/homefollow"
-        },
-        {
-          text: "个性推荐",
-          path: "/index"
-        }
-      ],
-    };
-  },
-  mounted() {
-    this.getBannerList();
-
-    this.getGridList();
-
-    this.getDesignList();
-
-  },
-  methods:{
-      async getBannerList() {
-      const res= await getBannerListApi();
-      this.swiperList = res.results[0].homeimg;
-    },
-
-      async getGridList() {
-      const res= await getGridListApi();
-      this.gridList = res.results[0].gridList;
-      console.log(res);
-    },
-
-      async getDesignList() {
-      const res= await getDesignListApi();
-      this.detailsList = res.results[0].detailsList;
-      console.log(res);
-    },
-    goToParticular(id) {
-      this.$router.push({ name: "Particular", params: { particularId: id } });
-    },
-  },
-
-  components: {
-    Swiper,
-    Head
+  props: {
+    detailsList: Array,
   }
-
 });
 </script>
 
 <style lang="scss" scoped>
-.index{
-  margin:0;
-  padding:0;
-  
+.like{
+      .title{
+      width: 94%;
+      height:50px;
+      display:flex;
+      flex-direction: row;
+      justify-content:space-between;
+      margin-top:10px;
+      line-height: 50px;
+      padding:10px 10px 0 10px;
+      font-size:25px;
+      font-weight: 800;
+    }
   div{
     height:100%;
    .touxiang{
@@ -119,7 +58,7 @@ export default defineComponent({
     float: left;
     margin-left:10px;
   }
-  .title{
+  .wenben{
     font-size:14px;
     line-height: 40px;
     height: 40px;
@@ -186,7 +125,7 @@ export default defineComponent({
     justify-content:space-around;
     font-size:30px;
     margin: 10px 0;
-  }
+    }
   }
 }
 </style>
