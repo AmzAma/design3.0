@@ -69,16 +69,14 @@ const routes = [
     component: () => import("../views/Designer.vue"),
   },
   {
-<<<<<<< HEAD
     path: "/caseexhibition",
     component: () => import("../views/CaseExhibition.vue"),
   },
-=======
+  {
     path: "/Particular/:particularId",
     name: "Particular",
     component: () => import("../views/Particular.vue"),
   }
->>>>>>> diadia
 ]
 
 // 3. Create the router instance and pass the `routes` option
