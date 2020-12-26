@@ -8,6 +8,9 @@
     :designerList="designerList"
     :desShowImg="desShowImg"
     />
+    <Recommend
+    :detailsList="detailsList"
+    />
   </div>
 </template>
 
@@ -15,10 +18,12 @@
 import Swiper from "../components/Index/Swiper.vue";
 import Head from "../components/Index/Head.vue";
 import Exchange from "../components/Index/Exchange.vue";
+import Recommend from "../components/Index/Recommend.vue";
+
 import { Toast } from "vant";
 import { ref } from 'vue';
-import { getBannerListApi} from "../utils/api";
-import { getDesignerListApi} from "../utils/api";
+import { getBannerListApi , getDesignerListApi , getDesignListApi} from "../utils/api";
+
 
 import { defineComponent } from 'vue'
 export default defineComponent({
@@ -26,6 +31,7 @@ export default defineComponent({
     return {
       swiperList: [],
       designerList:[],
+      detailsList:[],
       navList:[
         {
           text: "我的关注",
@@ -45,6 +51,8 @@ export default defineComponent({
   },
   mounted() {
     this.getBannerList();
+
+    this.getDesignList();
 
     this.getDesignerList();
 
@@ -70,6 +78,14 @@ export default defineComponent({
       console.log(this.desShowImg)
     },
 
+     async getDesignList() {
+      const res= await getDesignListApi();
+      this.detailsList = res.results[0].detailsList;
+      console.log(res);
+    },
+
+
+
     onClickRight() {
       Toast('按钮');
     },
@@ -78,7 +94,8 @@ export default defineComponent({
   components: {
     Swiper,
     Head,
-    Exchange
+    Exchange,
+    Recommend
   }
 });
 </script>

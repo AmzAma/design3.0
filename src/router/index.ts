@@ -68,6 +68,11 @@ const routes = [
   {
     path: "/designer",
     component: () => import("../views/Designer.vue"),
+  },
+  {
+    path: "/Particular/:particularId",
+    name: "Particular",
+    component: () => import("../views/Particular.vue"),
   }
 ]
 
