@@ -10,4 +10,4 @@ export const getDesignerListApi:any = (params:any):any => http.get("/index/getDe
 //消息页面
 export const getMessageListApi:any = (params:any):any => http.get("/message/getMessage", params);
 // 注册登陆
-export const getVerifyApi:any = (params:any):any => http.post("/register", params);
+export const getLoginApi:any = (params:any):any => http.post("/api/login", params);
