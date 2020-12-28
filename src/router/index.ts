@@ -93,7 +93,14 @@ const routes = [
   {
     path: "/Particular/:particularId",
     name: "Particular",
+    props: true,
     component: () => import("../views/Particular.vue"),
+  },
+  {
+    path: "/IndexCase/:IndexCaseId",
+    name: "IndexCase",
+    props: true,
+    component: () => import("../views/IndexCase.vue"),
   }
 ]
 

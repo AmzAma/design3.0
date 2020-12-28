@@ -9,8 +9,7 @@
      <van-image :src="item.designpic" class="touxiang" />
      <p class="wenben">{{item.designtitle}}</p>
      <button>关注</button>
-      
-     <div>
+     <div @click="goToParticular(item.particularId)"> 
      <van-image :src="item.designimgs" class="imgs" />
      <span class="zw">整屋</span>
      <p class="text">{{item.designtext}}</p>
@@ -31,7 +30,13 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   props: {
     detailsList: Array,
+  },
+  methods:{
+    goToParticular(id) {
+      this.$router.push({ name: "Particular", params: { particularId: id } });
+    },
   }
+
 });
 </script>
 
