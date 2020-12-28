@@ -4,11 +4,9 @@
     <h3>登陆注册</h3>
     <span>未注册用户，验证后即完成注册</span>
     <div class="txt">
-      <van-cell-group>
-          <van-field v-model="value" label="" border="true" placeholder="请输入手机号码"  />
-          <van-field v-model="password" type="password" placeholder="请输入密码"/>
-      </van-cell-group>
-      <van-button type="primary" block>登录</van-button>
+      <van-field v-model="state.tel" type="tel"  placeholder="请输入手机号" />
+      <van-field v-model="state.password" type="password"  placeholder="请输入密码" />
+      <van-button type="primary" block @click="loginfn">登录</van-button>
       <div class="text-f"> 
       <span>账号密码登陆</span>
       <span>收不到验证码</span>
@@ -25,23 +23,27 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { getVerifyApi} from "../utils/api";
+import { reactive } from 'vue';
+import{ getLoginApi }from "../utils/api"
 export default {
   setup() {
-    const value = ref('');
-    return { value };
+    const state = reactive({
+      tel: '',
+      password:''
+    });
+    return { state };
   },
-  // methods:{
-  //   async getVerify() {
-  //     console.log(this.sms)
-  //     const res= await getVerifyApi({
-  //       phone:this.value,
-  //       code:this.sms
-  //     });
-  //     this.designList = res.results[0].designList;
-  //     }
-  // }
+  methods:{
+    async loginfn() {
+      let res= await getLoginApi({
+        tel:this.state.tel,
+        password:this.state.password
+      });
+      if(res){
+        console.log(99999)
+      }
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
