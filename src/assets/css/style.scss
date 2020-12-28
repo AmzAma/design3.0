@@ -56,16 +56,16 @@ font-size: 20px;
 }
 
 //设计师头部返回箭头
-.des-hd {
-  .van-icon-arrow-left::before {
+.des-hd .van-icon-arrow-left::before,.csex .van-icon-arrow-left::before{
     content: "";
     color: #000;
   }
-}
+
 //添加页面X
 .add .van-grid-item:nth-child(4){
   .van-icon__image{
     border-radius: 50%;
     box-shadow: red 0 0 1px;
   }
+  
 }

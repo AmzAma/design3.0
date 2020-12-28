@@ -81,7 +81,9 @@ const routes = [
     component: () => import("../views/Notice.vue"),
   },
   {
-    path: "/designer",
+    path: "/designer/:desId",
+    name: "Designer",
+    props: true,
     component: () => import("../views/Designer.vue"),
   },
   {

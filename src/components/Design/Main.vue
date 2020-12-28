@@ -1,7 +1,7 @@
 <template>
   <ul class="ds-main">
     <li v-for="(item,index) in designList" :key="index">
-      <ul class="main-title">
+      <ul class="main-title" @click="goToDesigner(item.desId)">
         <li>
           <van-image 
             round
@@ -36,6 +36,11 @@ export default defineComponent({
   props:{
     designList: Array,
     showImgList: Array
+  },
+  methods: {
+    goToDesigner(id){
+      this.$router.push({ name:"Designer", params:{ desId:id}});
+    }
   }
 });
 </script>

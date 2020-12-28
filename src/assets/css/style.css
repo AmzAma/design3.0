@@ -50,7 +50,7 @@
   color: #000;
 }
 
-.des-hd .van-icon-arrow-left::before {
+.des-hd .van-icon-arrow-left::before, .csex .van-icon-arrow-left::before {
   content: "";
   color: #000;
 }

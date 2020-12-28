@@ -1,9 +1,11 @@
 <template>
-  <van-nav-bar
-    title="案例"
-    left-arrow
-  />
-  <ex-main />
+  <div class="csex">
+    <van-nav-bar
+      title="案例"
+      left-arrow
+    />
+    <ex-main />
+  </div>
 </template>
 
 <script lang="ts">

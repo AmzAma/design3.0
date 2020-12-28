@@ -1,38 +1,17 @@
 <template>
-  <div class="case">
+  <div class="case" v-if="designerList.desName">
     <van-nav-bar left-text="案例" size="20" :border="false">
       <template #right>
-        <span class="pian">18篇</span>
+        <span class="pian">{{ designerList.casecount }}篇</span>
         <van-icon name="arrow" color="#999"/>
       </template>
     </van-nav-bar>
     <van-swipe :loop="false" :show-indicators="false">
-      <van-swipe-item>
-        <van-image width="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+      <van-swipe-item v-for="(item,index) in designerList.caseshow" :key="item.index">
+        <van-image width="100%" radius="5px" :src="item.img" />
         <div class="case-con">
-          <p>慢漫 | 方界设计作品</p>
-          <p>114m²/现代简约/三居/25图</p>
-        </div>
-      </van-swipe-item>
-      <van-swipe-item>
-        <van-image width="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <div class="case-con">
-          <p>慢漫 | 方界设计作品</p>
-          <p>114m²/现代简约/三居/25图</p>
-        </div>
-      </van-swipe-item>
-      <van-swipe-item>
-        <van-image width="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <div class="case-con">
-          <p>慢漫 | 方界设计作品</p>
-          <p>114m²/现代简约/三居/25图</p>
-        </div>
-      </van-swipe-item>
-      <van-swipe-item>
-        <van-image width="100%" radius="5px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <div class="case-con">
-          <p>慢漫 | 方界设计作品</p>
-          <p>114m²/现代简约/三居/25图</p>
+          <p>{{ item.casetitle }}</p>
+          <p>{{ item.subhase}}</p>
         </div>
       </van-swipe-item>
     </van-swipe>
@@ -42,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({  
-  
+  props: ["designerList"],
 });
 </script>
 

@@ -1,18 +1,18 @@
 <template>
-  <div class="des-hd">
-    <van-nav-bar left-arrow :border="false">
+  <div class="des-hd" v-if="designerList.desName">
+    <van-nav-bar left-arrow :border="false" @click-left="onClickLeft">
       <template #right>
         <van-icon name="ellipsis" color="#000"/>
       </template>
     </van-nav-bar>
     <ul class="des-header">
       <li>
-        <van-image width="1.5rem" height="1.5rem" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+        <van-image width="1.5rem" height="1.5rem" round :src="designerList.desPortait"/>
       </li>
       <li>
-        <p>方界设计</p>
+        <p>{{ designerList.desName }}</p>
         <p><van-icon name="vip-card" color="red" /></p>
-        <p><van-icon name="location-o" />广东深圳</p>
+        <p><van-icon name="location-o" />{{ designerList.desCity }}</p>
       </li>
       <li>
         <p>
@@ -22,16 +22,16 @@
     </ul>
     <ul class="des-charge">
       <li>
-        <p>￥50-80/m<sup>2</sup></p>
+        <p>￥{{designerList.desPrice}}<sup>2</sup></p>
         <p>设计收费</p>
       </li>
       <li>
         <div>
-          <p>135</p>
+          <p>{{designerList.desFans}}</p>
           <p>粉丝</p>
         </div>
         <div>
-          <p>149</p>
+          <p>{{designerList.desYuyue}}</p>
           <p>预约</p>
         </div>
       </li>
@@ -41,8 +41,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-export default defineComponent({  
-  
+import { useRoute } from 'vue-router'
+
+export default defineComponent({
+  props: ["designerList"],
+  methods:{
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+  }
 });
 </script>
 
@@ -57,12 +64,12 @@ export default defineComponent({
         margin-left: 5px;
         p{
           margin-top: 5px;
+          text-align: left;
           &:nth-child(1){
             font-size: 14px;
           }
           &:nth-child(2){
             font-size: 12px;
-            text-align: left;
           }
           &:nth-child(3){
             font-size: 10px;
