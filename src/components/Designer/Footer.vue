@@ -5,7 +5,7 @@
       <span class="relation">联系TA</span>
     </van-button>
     <van-button type="primary" color="red" round>
-      <van-icon name="phone" />联系TA
+      在线预约
     </van-button>
   </div>
 </template>

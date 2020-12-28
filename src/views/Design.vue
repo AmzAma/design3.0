@@ -3,7 +3,7 @@
   <!-- 头部 -->
   <ds-header />
   <!-- 内容 -->
-  <ds-main />
+  <ds-main :designList="designList"/>
 </template>
 
 <script lang="ts">
@@ -30,7 +30,6 @@ export default defineComponent({
     async getDesignerList() {
       const res= await getDesignerListApi();
       this.designList = res.results[0].designerList;
-      console.log(this.designList);
     }
   }
 });

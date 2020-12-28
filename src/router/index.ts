@@ -65,7 +65,9 @@ const routes = [
     component: () => import("../views/Fabulous.vue"),
   },
   {
-    path: "/designer",
+    path: "/designer/:desId",
+    name: "Designer",
+    props: true,
     component: () => import("../views/Designer.vue"),
   },
   {

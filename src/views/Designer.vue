@@ -1,8 +1,8 @@
 <template>
   <!-- 头部 -->
-  <des-header />
+  <des-header :designerList="designerList" />
   <!-- 案例 -->
-  <des-case />
+  <des-case :designerList="designerList" />
   <!-- 水平线 -->
   <div class="l"></div>
   <!-- 博文 -->
@@ -22,12 +22,35 @@ import DesCase from '../components/Designer/Case.vue'
 import DesBlog from '../components/Designer/Blog.vue'
 import DesFooter from '../components/Designer/Footer.vue'
 
+import { getDesignerListApi } from '../utils/api'
+
 export default defineComponent({  
+  props:["desId"],
+  data(){
+    return{
+      id:this.desId,
+      designerList: [],
+      desId:""
+    }
+  },
   components: {
     DesHeader,
     DesCase,
     DesBlog,
     DesFooter
+  },
+  mounted(){
+    this.getDesignerList();
+  },
+  methods:{
+    async getDesignerList() {
+      const res= await getDesignerListApi({ id: this.id });
+      const list = res.results[0].designerList;
+      this.designerList = list.find(item => {
+        return item.desId === this.desId
+      })
+      console.log(this.designerList)
+    },
   }
 });
 </script>
