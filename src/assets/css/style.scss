@@ -7,6 +7,10 @@
   color: #333333;
   font-size: 16px;
 }
+.van-icon-arrow-left::before{
+  color: rgb(88, 88, 88);
+font-size: 20px;
+}
 
 //底部导航
 .van-tabbar-item:nth-child(3){
@@ -40,6 +44,9 @@
   font-weight: 400;
   color: #333333;
 }
+.msg .van-icon__image{
+  border-radius: 0;
+}
 
 
 //案例和博文标题
@@ -53,5 +60,12 @@
   .van-icon-arrow-left::before {
     content: "";
     color: #000;
+  }
+}
+//添加页面X
+.add .van-grid-item:nth-child(4){
+  .van-icon__image{
+    border-radius: 50%;
+    box-shadow: red 0 0 1px;
   }
 }

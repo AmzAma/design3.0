@@ -2,13 +2,13 @@
   <div class="index">
    <Head :navList="navList" />
 
-   <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="130" @refresh="onRefresh">
+   <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="105" @refresh="onRefresh">
     <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
     <template #pulling="props">
       <img
         class="doge"
         src="http://42.192.149.116:3001/images/freshImg.png"
-        :style="{ transform: `scale(${props.distance / 130})` }"
+        :style="{ transform: `scale(${props.distance / 105})` }"
       />
       <p class="freshtitle">嗨，热爱生活的梦想家</p>
     </template>
@@ -234,15 +234,14 @@ export default defineComponent({
   }
   }
   .doge {
-    width: 100px;
-    height: 70px;
-    margin-top: 8px;
-    border-radius: 4px;
-    background-color: red;
+    width: 55px;
+    height: 50px;
+    margin-top: 30px;
   }
   .freshtitle{
     position: relative;
     top: -30px;
+    color: rgb(221, 221, 221);
   }
 }
 </style>

@@ -1,8 +1,14 @@
+@charset "UTF-8";
 .van-nav-bar__title {
   font-family: PingFang SC;
   font-weight: 600;
   color: #333333;
   font-size: 16px;
+}
+
+.van-icon-arrow-left::before {
+  color: #585858;
+  font-size: 20px;
 }
 
 .van-tabbar-item:nth-child(3) .van-tabbar-item__icon {
@@ -35,7 +41,21 @@
   color: #333333;
 }
 
+.msg .van-icon__image {
+  border-radius: 0;
+}
+
 .case .van-nav-bar__text, .blog .van-nav-bar__text {
   font-size: 18px;
   color: #000;
+}
+
+.des-hd .van-icon-arrow-left::before {
+  content: "";
+  color: #000;
+}
+
+.add .van-grid-item:nth-child(4) .van-icon__image {
+  border-radius: 50%;
+  box-shadow: red 0 0 1px;
 }

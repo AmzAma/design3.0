@@ -1,17 +1,18 @@
 <template>
+<div class="comment">
   <van-nav-bar
     title="评论和@"
     left-arrow
     @click-left="onClickLeft"
   />
 
-  <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="120" @refresh="onRefresh">
+  <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="70" @refresh="onRefresh">
     <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
     <template #pulling="props">
       <img
         class="doge"
         src="http://42.192.149.116:3001/images/freshImg.png"
-        :style="{ transform: `scale(${props.distance / 120})` }"
+        :style="{ transform: `scale(${props.distance / 70})` }"
       />
       <p class="freshtitle">嗨，热爱生活的梦想家</p>
     </template>
@@ -30,7 +31,7 @@
 
     <img src="../assets/img/comment.jpg" />
   </van-pull-refresh>
-
+</div>
 </template>
 
 <script lang="ts">
@@ -65,7 +66,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  
+.comment{
+  height: 100vh;
+  background-color: rgb(250,250,250);
   img{
     width: 100%;
     height: 100%;
@@ -74,13 +77,12 @@ export default defineComponent({
     color: #000;
   }
   .doge {
-    width: 140px;
-    height: 72px;
-    margin-top: 8px;
-    border-radius: 4px;
+    width: 45px;
+    height: 40px;
   }
   .freshtitle{
     position: relative;
     top: -30px;
   }
+}
 </style>

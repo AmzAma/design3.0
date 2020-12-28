@@ -57,12 +57,28 @@ const routes = [
     component: () => import("../views/Add.vue")
   },
   {
+    path: "/sendquestion",
+    component: () => import("../views/Sendquestion.vue")
+  },
+  {
+    path: "/replyquestion",
+    component: () => import("../views/Replyquestion.vue")
+  },
+  {
     path: "/comment",
     component: () => import("../views/Comment.vue")
   },
   {
     path: "/fabulous",
     component: () => import("../views/Fabulous.vue"),
+  },
+  {
+    path: "/messageinfo",
+    component: () => import("../views/Messageinfo.vue"),
+  },
+  {
+    path: "/notice",
+    component: () => import("../views/Notice.vue"),
   },
   {
     path: "/designer",

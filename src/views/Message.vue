@@ -7,14 +7,14 @@
       </template>
     </van-nav-bar>
     <!-- 下拉刷新 -->
-    <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="130" @refresh="onRefresh">
+    <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="70" @refresh="onRefresh">
     
       <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
       <template #pulling="props">
         <img
           class="doge"
           src="http://42.192.149.116:3001/images/freshImg.png"
-          :style="{ transform: `scale(${props.distance / 130})` }"
+          :style="{ transform: `scale(${props.distance / 70})` }"
         />
         <p class="freshtitle">嗨，热爱生活的梦想家</p>
       </template>
@@ -35,10 +35,10 @@
       <van-grid :column-num="3" :border="false" >
         <van-grid-item icon="http://42.192.149.116:3001/images/msgIcon1.png" text="评论和@" @click="goToComment" />
         <van-grid-item icon="http://42.192.149.116:3001/images/msgIcon2.png" text="赞和收藏" @click="goToFabulous" />
-        <van-grid-item icon="http://42.192.149.116:3001/images/msgIcon3.png" text="系统通知" />
+        <van-grid-item icon="http://42.192.149.116:3001/images/msgIcon3.png" text="系统通知" @click="goToNotice" />
       </van-grid>
       <!-- 消息列表 -->
-      <van-swipe-cell :before-close="beforeClose" v-for="(item,index) in cardList" :key="index">
+      <van-swipe-cell :before-close="beforeClose" v-for="(item,index) in cardList" :key="index" @click="msgClick">
         <div class="cell-left">
           <van-image
             width="33px"
@@ -70,8 +70,7 @@ import { getMessageListApi} from "../utils/api";
 export default defineComponent({
   data(){
     return{
-      cardList: [],
-      iconList:[]
+      cardList: []
     }
   },
   setup() {
@@ -115,12 +114,27 @@ export default defineComponent({
     goToFabulous(){
       this.$router.push("/fabulous");
     },
+    goToNotice(){
+      this.$router.push("/notice");
+    },
+    msgClick(position) {
+      switch (position) {
+        case 'left':
+          return true;
+        case 'cell':
+          this.$router.push("/messageinfo");
+        case 'outside':
+          return true;
+        case 'right':
+          return true;
+      }
+    },
     async getMessageList() {
       const res= await getMessageListApi();
       this.cardList = res.results[0].cardList;
       this.iconList = res.results[1].iconList;  
       console.log(res);
-    },
+    }
   }
 });
 </script>
@@ -199,10 +213,8 @@ export default defineComponent({
       }
     }
     .doge {
-      width: 100px;
-      height: 70px;
-      margin-top: 8px;
-      border-radius: 4px;
+      width: 45px;
+      height: 40px;
     }
     .freshtitle{
       position: relative;
