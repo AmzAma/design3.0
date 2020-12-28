@@ -33,7 +33,8 @@
       :column-num="4">
       <van-grid-item
         v-for="(item, index) in gridList" 
-        :key="index" 
+        :key="index"
+        @click="goToIndexCase()" 
       >
         <van-image 
         :src="item.gridimgs" />
@@ -81,12 +82,14 @@ export default defineComponent({
       swiperList: [],
       gridList:[],
       detailsList:[],
+      particular:[],
+      particularId:"",
       
       navList:[
         {
           text: "我的关注",
           path: "/homefollow"
-        },
+        },   
         {
           text: "个性推荐",
           path: "/index"
@@ -117,11 +120,17 @@ export default defineComponent({
       async getDesignList() {
       const res= await getDesignListApi();
       this.detailsList = res.results[0].detailsList;
-      console.log(res);
+      this.particularId = this.detailsList.particularId
+     
     },
+
     goToParticular(id) {
       this.$router.push({ name: "Particular", params: { particularId: id } });
     },
+
+    goToIndexCase(id){
+      this.$router.push({ name: "IndexCase", params: { IndexCaseId: id } });
+    }
   },
 
   components: {
