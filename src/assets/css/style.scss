@@ -21,10 +21,21 @@ font-size: 20px;
     background-color: red;
     border-radius: 50%;
     font-size: 20px;
+    font-weight: 900;
     .van-icon-plus::before{
       transform: translateY(10px);
     }
   }
+}
+.van-tabbar-item__icon{
+  img{
+    width: 25px;
+    height: 20px;
+    border-radius: 0;
+  }
+}
+.van-tabbar-item__text{
+  color: rgb(88, 88, 88);
 }
 
 //首页切换tab背景色
@@ -92,5 +103,22 @@ font-size: 20px;
         }
       }
     }
+  }
+  .van-button__text{
+    color: #F6483F;
+  }
+  .van-uploader__upload{
+    width: 120px;
+    height: 120px;
+    background-color: rgb(236, 236, 236);
+  }
+  .van-icon-plus::before {
+    color: #fff;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  .van-uploader__preview-image{
+    width: 120px;
+    height: 120px;
   }
 }

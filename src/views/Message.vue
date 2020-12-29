@@ -65,7 +65,7 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import { Dialog, Toast } from 'vant';
-import { getMessageListApi} from "../utils/api";
+import { getMessageListApi } from "../utils/api";
 
 export default defineComponent({
   data(){
@@ -131,8 +131,7 @@ export default defineComponent({
     },
     async getMessageList() {
       const res= await getMessageListApi();
-      this.cardList = res.results[0].cardList;
-      this.iconList = res.results[1].iconList;  
+      this.cardList = res.results[0].cardList; 
       console.log(res);
     }
   }
