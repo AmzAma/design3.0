@@ -1,5 +1,5 @@
 <template>
-  <div class="case" v-if="designerList.desName">
+  <div class="case" v-if="designerList.desName" @click="goToDesigner(item.desId)">
     <van-nav-bar left-text="案例" size="20" :border="false">
       <template #right>
         <span class="pian">{{ designerList.casecount }}篇</span>
