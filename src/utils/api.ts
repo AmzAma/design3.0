@@ -5,6 +5,8 @@ export const getBannerListApi:any = (params:any):any => http.get("/index/getBann
 export const getGridListApi:any = (params:any):any => http.get("/index/getGrid", params);
 //八个宫格详情页
 export const getIndexCaseApi:any = (params:any):any => http.get("/index/getIndexCase", params);
+//八个宫格详情页2
+export const getGongzApi:any = (params:any):any => http.get("/index/getGongz", params);
 //设计首页
 export const getDesignListApi:any = (params:any):any => http.get("/index/getDesign", params);
 //设计师页面

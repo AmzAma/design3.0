@@ -24,7 +24,7 @@
     </template>
    <div style="margin-top:90px">
     <div 
-     v-for="(item, index) in casesList"
+     v-for="(item, index) in gongzList"
      :key="index"
     >
      <div style="position: relative;">
@@ -41,24 +41,22 @@
 
 <script lang="ts"> 
 import { Toast } from 'vant'
-import { getIndexCaseApi } from "../utils/api";
+import { getGongzApi } from "../utils/api";
 import Head4 from "../components/Index/Head4.vue";
 import { defineComponent, reactive } from 'vue'
 export default defineComponent({
   data() {
     return {
-    casesList:[]
+    gongzList:[]
     };
   },
   mounted() {
-this.getcasesList();
+this.getgongzList();
   },
   methods:{
-    async getcasesList() {
-      const res= await getIndexCaseApi();
-      this.casesList = res.results[0].casesList;
-      console.log(this.casesList)
-      // this.particularId = this.casesList.particularId
+    async getgongzList() {
+      const res= await getGongzApi();
+      this.gongzList = res.results[0].gongzList;
     },
 
   },
