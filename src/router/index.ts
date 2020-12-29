@@ -97,10 +97,27 @@ const routes = [
     component: () => import("../views/Particular.vue"),
   },
   {
-    path: "/IndexCase/:IndexCaseId",
+    path: "/CaseParticular/:particularId",
+    name: "CaseParticular",
+    props: true,
+    component: () => import("../views/CaseParticular.vue"),
+  },
+  {
+    path: "/IndexCase",
     name: "IndexCase",
     props: true,
     component: () => import("../views/IndexCase.vue"),
+    children: [
+      {
+        path: "/gongz",
+        component: () => import("../views/Gongz.vue"),
+      },
+      {
+        path: "/jiaz",
+        component: () => import("../views/Jiaz.vue"),
+      },
+
+    ]
   }
 ]
 

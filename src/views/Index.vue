@@ -128,8 +128,8 @@ export default defineComponent({
       this.$router.push({ name: "Particular", params: { particularId: id } });
     },
 
-    goToIndexCase(id){
-      this.$router.push({ name: "IndexCase", params: { IndexCaseId: id } });
+    goToIndexCase(){
+      this.$router.push('/jiaz');
     }
   },
 
