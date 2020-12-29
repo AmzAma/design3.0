@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view />
-    <van-tabbar v-model="active" route :placeholder="true">
+    <!-- <van-tabbar v-model="active" route :placeholder="true">
       <van-tabbar-item
         v-for="item in tabbarList"
         :key="item.to"
@@ -9,6 +9,34 @@
         :to="item.to"
       >
         {{ item.title }}
+      </van-tabbar-item>
+    </van-tabbar> -->
+
+    <van-tabbar v-model="active">
+      <van-tabbar-item to="/index">
+        <span>首页</span>
+        <template #icon="props">
+          <img :src="props.active ? icon.active : icon.inactive" />
+        </template>
+      </van-tabbar-item>
+      <van-tabbar-item to="/design">
+        <span>设计师</span>
+        <template #icon="props">
+          <img :src="props.active ? icon.active : icon.inactive" />
+        </template>
+      </van-tabbar-item>
+      <van-tabbar-item icon="plus" to="/add"></van-tabbar-item>
+      <van-tabbar-item to="/message">
+        <span>消息</span>
+        <template #icon="props">
+          <img :src="props.active ? icon.active : icon.inactive" />
+        </template>
+      </van-tabbar-item>
+      <van-tabbar-item to="/mine">
+        <span>我的</span>
+        <template #icon="props">
+          <img :src="props.active ? icon.active : icon.inactive" />
+        </template>
       </van-tabbar-item>
     </van-tabbar>
   </div>
@@ -23,37 +51,22 @@ export default defineComponent({
   data() {
     return {
       active: 0,
-      tabbarList: [
-        {
-          title: "首页",
-          icon: "home-o",
-          to: "/index",
-          dot: false
-        },
-        {
-          title: "设计师",
-          icon: "search",
-          to: "/design",
-          dot: false
-        },
-        {
-          icon: "plus",
-          to: "/add",
-          dot: false
-        },
-        {
-          title: "消息",
-          icon: "setting-o",
-          to: "/message",
-          dot: false
-        },
-        {
-          title: "我的",
-          icon: "setting-o",
-          to: "/mine",
-          dot: false
-        }
-      ]
+      icon: {
+        active: 'http://42.192.149.116:3001/images/tabbar5.png',
+        inactive: 'http://42.192.149.116:3001/images/tabbar1.png',
+      },
+      icon2: {
+        active: 'http://42.192.149.116:3001/images/tabbar2.png',
+        inactive: 'http://42.192.149.116:3001/images/tabbar6.png',
+      },
+      icon3: {
+        active: 'http://42.192.149.116:3001/images/tabbar3.png',
+        inactive: 'http://42.192.149.116:3001/images/tabbar7.png',
+      },
+      icon4: {
+        active: 'http://42.192.149.116:3001/images/tabbar4.png',
+        inactive: 'http://42.192.149.116:3001/images/tabbar8.png',
+      },
     };
   },
   setup() {
