@@ -59,3 +59,28 @@
   border-radius: 50%;
   box-shadow: red 0 0 1px;
 }
+
+.send .van-cell {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  width: 85%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.send .van-cell .van-cell__value {
+  height: 60px;
+}
+
+.send .van-cell .van-cell__value .van-field__body {
+  height: 60px;
+  line-height: 60px;
+}
+
+.send .van-cell .van-cell__value .van-field__body .van-field__control {
+  font-size: 18px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
