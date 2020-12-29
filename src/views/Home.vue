@@ -16,26 +16,26 @@
       <van-tabbar-item to="/index">
         <span>首页</span>
         <template #icon="props">
-          <img :src="props.active ? icon.active : icon.inactive" />
+          <img :src="props.active ? 'http://42.192.149.116:3001/images/tabbar5.png' : 'http://42.192.149.116:3001/images/tabbar1.png'" />
         </template>
       </van-tabbar-item>
       <van-tabbar-item to="/design">
         <span>设计师</span>
         <template #icon="props">
-          <img :src="props.active ? icon.active : icon.inactive" />
+          <img :src="props.active ? 'http://42.192.149.116:3001/images/tabbar6.png' : 'http://42.192.149.116:3001/images/tabbar2.png'" />
         </template>
       </van-tabbar-item>
       <van-tabbar-item icon="plus" to="/add"></van-tabbar-item>
       <van-tabbar-item to="/message">
         <span>消息</span>
         <template #icon="props">
-          <img :src="props.active ? icon.active : icon.inactive" />
+          <img :src="props.active ? 'http://42.192.149.116:3001/images/tabbar7.png' : 'http://42.192.149.116:3001/images/tabbar3.png'" />
         </template>
       </van-tabbar-item>
       <van-tabbar-item to="/mine">
         <span>我的</span>
         <template #icon="props">
-          <img :src="props.active ? icon.active : icon.inactive" />
+          <img :src="props.active ? 'http://42.192.149.116:3001/images/tabbar8.png' : 'http://42.192.149.116:3001/images/tabbar4.png'" />
         </template>
       </van-tabbar-item>
     </van-tabbar>
@@ -51,22 +51,22 @@ export default defineComponent({
   data() {
     return {
       active: 0,
-      icon: {
-        active: 'http://42.192.149.116:3001/images/tabbar5.png',
-        inactive: 'http://42.192.149.116:3001/images/tabbar1.png',
-      },
-      icon2: {
-        active: 'http://42.192.149.116:3001/images/tabbar2.png',
-        inactive: 'http://42.192.149.116:3001/images/tabbar6.png',
-      },
-      icon3: {
-        active: 'http://42.192.149.116:3001/images/tabbar3.png',
-        inactive: 'http://42.192.149.116:3001/images/tabbar7.png',
-      },
-      icon4: {
-        active: 'http://42.192.149.116:3001/images/tabbar4.png',
-        inactive: 'http://42.192.149.116:3001/images/tabbar8.png',
-      },
+      // icon: {
+      //   active: 'http://42.192.149.116:3001/images/tabbar5.png',
+      //   inactive: 'http://42.192.149.116:3001/images/tabbar1.png',
+      // },
+      // icon2: {
+      //   active: 'http://42.192.149.116:3001/images/tabbar2.png',
+      //   inactive: 'http://42.192.149.116:3001/images/tabbar6.png',
+      // },
+      // icon3: {
+      //   active: 'http://42.192.149.116:3001/images/tabbar3.png',
+      //   inactive: 'http://42.192.149.116:3001/images/tabbar7.png',
+      // },
+      // icon4: {
+      //   active: 'http://42.192.149.116:3001/images/tabbar4.png',
+      //   inactive: 'http://42.192.149.116:3001/images/tabbar8.png',
+      // },
     };
   },
   setup() {

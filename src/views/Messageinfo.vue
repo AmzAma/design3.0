@@ -31,15 +31,15 @@
       <p class="freshtitle">嗨，热爱生活的梦想家</p>
     </template>
 
-    <div class="info">
-      <p class="info-time">2小时前</p>
+    <div class="info" v-for="(item,index) in infoList" :key="index">
+      <p class="info-time">{{ item.create_time }}</p>
       <div class="infoCard">
-        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/9c16fdfaaf51f3de9ba8ee1194eef01f3a2979a8.jpg" alt="">
+        <img :src="item.infoImg" alt="">
         <p class="info-title">
-          现代简约黑白灰，越简洁约高级
+          {{item.infoTitle}}
         </p>
         <p class="info-content">
-          整个空间的视觉线索以弧形元素为主导，贯穿整个布局。看似简单的室内装饰，实际上却十分讲究。          
+          {{item.infoContent}}
         </p>
       </div>
     </div>
@@ -51,7 +51,13 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import { Toast } from 'vant';
+import { getMessageListApi} from "../utils/api";
 export default defineComponent({
+  data(){
+    return{
+      infoList:[]
+    }
+  },
   setup() {
     const state = reactive({
       count: 0,
@@ -70,9 +76,17 @@ export default defineComponent({
       onRefresh,
     };
   },
+  mounted(){
+    this.getMessageList();
+  },
   methods:{
     backClick(){
       this.$router.push("/message");
+    },
+    async getMessageList() {
+      const res= await getMessageListApi();
+      this.infoList = res.results[2].msginfoList; 
+      console.log(this.infoList);
     }
   }
 })
@@ -115,6 +129,8 @@ export default defineComponent({
         margin: 0 14px 10px;
       }
       .info-content{
+        width: 312px;
+        height: 34px;
         margin: 0 14px;
         text-align: left;
         font-size: 12px;
@@ -122,6 +138,10 @@ export default defineComponent({
         font-weight: 400;
         color: #666666;
         line-height: 16px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
       }
     }
   }

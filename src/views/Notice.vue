@@ -31,42 +31,19 @@
       <p class="freshtitle">嗨，热爱生活的梦想家</p>
     </template>
 
-    <div class="info">
-      <p class="info-time">2小时前</p>
+    <div class="info" v-for="(item,index) in tipList" :key="index">
+      <p class="info-time">{{item.create_time}}</p>
       <div class="infoCard">
-        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/9c16fdfaaf51f3de9ba8ee1194eef01f3a2979a8.jpg" alt="">
+        <img :src="item.tipImg" alt="">
         <p class="info-title">
-          2020设计本年度盛典作品入围公式~
+          {{ item.tipTitle }}
         </p>
         <p class="info-content">
-          感谢设计师们和设计机构们的支持！快来围观入围的作品吧~~~          
+          {{ item.tipContent }}       
         </p>
       </div>
     </div>
-    <div class="info">
-      <p class="info-time">2小时前</p>
-      <div class="infoCard">
-        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/9c16fdfaaf51f3de9ba8ee1194eef01f3a2979a8.jpg" alt="">
-        <p class="info-title">
-          2020设计本年度盛典作品入围公式~
-        </p>
-        <p class="info-content">
-          感谢设计师们和设计机构们的支持！快来围观入围的作品吧~~~          
-        </p>
-      </div>
-    </div>
-    <div class="info">
-      <p class="info-time">2小时前</p>
-      <div class="infoCard">
-        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/9c16fdfaaf51f3de9ba8ee1194eef01f3a2979a8.jpg" alt="">
-        <p class="info-title">
-          2020设计本年度盛典作品入围公式~
-        </p>
-        <p class="info-content">
-          感谢设计师们和设计机构们的支持！快来围观入围的作品吧~~~          
-        </p>
-      </div>
-    </div>
+
   </van-pull-refresh>
   </div>
 </template>
@@ -74,8 +51,14 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import { Toast } from 'vant';
+import { getMessageListApi} from "../utils/api";
 
 export default defineComponent({
+  data(){
+    return{
+      tipList:[]
+    }
+  },
   setup() {
     const state = reactive({
       count: 0,
@@ -94,9 +77,17 @@ export default defineComponent({
       onRefresh,
     };
   },
+  mounted(){
+    this.getMessageList();
+  },
   methods: {
     backClick(){
       this.$router.go(-1);
+    },
+    async getMessageList() {
+      const res= await getMessageListApi();
+      this.tipList = res.results[3].noticeList; 
+      console.log(this.tipList);
     }
   }
 });

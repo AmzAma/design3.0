@@ -74,6 +74,8 @@ const routes = [
   },
   {
     path: "/messageinfo",
+    name:"MessageInfo",
+    props:true,
     component: () => import("../views/Messageinfo.vue"),
   },
   {

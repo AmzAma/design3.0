@@ -29,7 +29,9 @@ import {
   NavBar,
   PullRefresh,
   Cell,
-  CellGroup 
+  CellGroup,
+  Overlay,
+  Uploader
 } from 'vant';
 
 
@@ -63,6 +65,8 @@ app.use(VanImage);
 app.use(PullRefresh);
 app.use(Cell);
 app.use(CellGroup);
+app.use(Overlay);
+app.use(Uploader);
 
 app.use(router);
 app.mount('#app')

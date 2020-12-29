@@ -18,10 +18,21 @@
   background-color: red;
   border-radius: 50%;
   font-size: 20px;
+  font-weight: 900;
 }
 
 .van-tabbar-item:nth-child(3) .van-tabbar-item__icon .van-icon-plus::before {
   transform: translateY(10px);
+}
+
+.van-tabbar-item__icon img {
+  width: 25px;
+  height: 20px;
+  border-radius: 0;
+}
+
+.van-tabbar-item__text {
+  color: #585858;
 }
 
 .index .van-tab {
@@ -83,4 +94,25 @@
   font-family: PingFang SC;
   font-weight: 500;
   color: #666666;
+}
+
+.send .van-button__text {
+  color: #F6483F;
+}
+
+.send .van-uploader__upload {
+  width: 120px;
+  height: 120px;
+  background-color: #ececec;
+}
+
+.send .van-icon-plus::before {
+  color: #fff;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+.send .van-uploader__preview-image {
+  width: 120px;
+  height: 120px;
 }

@@ -11,5 +11,8 @@ export const getDesignListApi:any = (params:any):any => http.get("/index/getDesi
 export const getDesignerListApi:any = (params:any):any => http.get("/index/getDesigner", params);
 //消息页面
 export const getMessageListApi:any = (params:any):any => http.get("/message/getMessage", params);
+//回答问题
+export const getQuestionApi:any = (params:any):any => http.get("/question/getQuestion",params);
 // 注册登陆
 export const getLoginApi:any = (params:any):any => http.post("/api/login", params);
+
