@@ -71,7 +71,7 @@ import Head from "../components/Index/Head.vue";
 
 
 import { ref } from 'vue';
-import { getBannerListApi, getGridListApi, getDesignListApi, getVerifyApi} from "../utils/api";
+import { getBannerListApi, getGridListApi, getDesignListApi } from "../utils/api";
 
 import { Toast } from 'vant'
 import { defineComponent, reactive } from 'vue'
