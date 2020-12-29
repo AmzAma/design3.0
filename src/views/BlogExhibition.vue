@@ -1,17 +1,17 @@
 <template>
   <div class="csex">
     <van-nav-bar
-      title="案例"
+      title="博文"
       left-arrow
       @click-left="onClickLeft"
     />
-    <c-ex-main :designerList="designerList" />
+    <b-ex-main :designerList="designerList"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import CExMain from '../components/CaseExhibition/Main.vue'
+import BExMain from '../components/BlogExhibition/Main.vue'
 import { getDesignerListApi } from '../utils/api'
 export default defineComponent({  
   props:["desId"],
@@ -23,7 +23,7 @@ export default defineComponent({
     }
   },
   components: {
-    CExMain
+    BExMain
   },
   mounted(){
     this.getDesignerList();

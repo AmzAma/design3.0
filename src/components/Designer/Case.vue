@@ -1,6 +1,6 @@
 <template>
   <div class="case" v-if="designerList.desName">
-    <van-nav-bar left-text="案例" size="20" :border="false">
+    <van-nav-bar left-text="案例" size="20" :border="false" @click="goToDesigner(designerList.desId)">
       <template #right>
         <span class="pian">{{ designerList.casecount }}篇</span>
         <van-icon name="arrow" color="#999"/>
@@ -8,10 +8,10 @@
     </van-nav-bar>
     <van-swipe :loop="false" :show-indicators="false">
       <van-swipe-item v-for="(item,index) in designerList.caseshow" :key="item.index">
-        <van-image width="100%" radius="5px" :src="item.img" />
+        <van-image width="100%" height="250px" radius="7px" :src="item.img" />
         <div class="case-con">
           <p>{{ item.casetitle }}</p>
-          <p>{{ item.subhase}}</p>
+          <p>{{ item.subhase }}</p>
         </div>
       </van-swipe-item>
     </van-swipe>
@@ -22,6 +22,11 @@
 import { defineComponent } from 'vue'
 export default defineComponent({  
   props: ["designerList"],
+  methods: {
+    goToDesigner(id){
+      this.$router.push({ name:"caseexhibition", params:{ desId:id}});
+    }
+  }
 });
 </script>
 

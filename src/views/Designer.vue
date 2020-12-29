@@ -6,7 +6,7 @@
   <!-- 水平线 -->
   <div class="l"></div>
   <!-- 博文 -->
-  <des-blog />
+  <des-blog :designerList="designerList"/>
   <!-- 水平线 -->
   <div class="l"></div>
   <!-- 底部提示 -->
@@ -49,7 +49,7 @@ export default defineComponent({
       this.designerList = list.find(item => {
         return item.desId === this.desId
       })
-      console.log(this.designerList)
+      // console.log(this.designerList)
     },
   }
 });

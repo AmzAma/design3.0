@@ -89,8 +89,16 @@ const routes = [
     component: () => import("../views/Designer.vue"),
   },
   {
-    path: "/caseexhibition",
+    path: "/caseexhibition/:desId",
+    name: "caseexhibition",
+    props: true,
     component: () => import("../views/CaseExhibition.vue"),
+  },
+  {
+    path: "/blogexhibition/:desId",
+    name: "blogexhibition",
+    props: true,
+    component: () => import("../views/BlogExhibition.vue"),
   },
   {
     path: "/Particular/:particularId",
