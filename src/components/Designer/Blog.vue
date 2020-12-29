@@ -1,6 +1,6 @@
 <template>
   <div class="blog" v-if="designerList.desName">
-    <van-nav-bar left-text="博文" size="20" :border="false">
+    <van-nav-bar left-text="博文" size="20" :border="false" @click="goToDesigner(designerList.desId)">
       <template #right>
         <span class="pian">{{ designerList.blogcount }}篇</span>
         <van-icon name="arrow" color="#999"/>
@@ -8,7 +8,7 @@
     </van-nav-bar>
     <van-swipe :loop="false" :show-indicators="false" >
       <van-swipe-item v-for="(item,index) in designerList.blogshow" :key="item.index">
-        <van-image width="100%" height="250px" radius="5px 5px 0 0" :src="item.img" />
+        <van-image width="100%" height="250px" radius="7px 7px 0 0" :src="item.img" />
         <div class="blog-con">
           <p>{{ item.blogtitle }}</p>
           <p>{{ item.subhase}}</p>
@@ -22,6 +22,11 @@
 import { defineComponent } from 'vue'
 export default defineComponent({  
   props: ["designerList"],
+  methods: {
+    goToDesigner(id){
+      this.$router.push({ name:"blogexhibition", params:{ desId:id}});
+    }
+  }
 });
 </script>
 

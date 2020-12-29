@@ -49,7 +49,7 @@ export default defineComponent({
       this.designerList = list.find(item => {
         return item.desId === this.desId
       })
-      console.log(this.designerList)
+      // console.log(this.designerList)
     },
   }
 });

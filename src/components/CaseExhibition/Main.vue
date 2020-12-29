@@ -1,7 +1,7 @@
 <template>
-  <div class="casemain">
+  <div class="casemain" v-if="designerList.desName">
     <ul class="ctop">
-      <li>120篇</li>
+      <li>{{designerList.casecount}}篇</li>
       <li>
         <van-icon name="fire-o" />
         <span>按热度</span>
@@ -10,17 +10,17 @@
         <span>按时间</span>
       </li>
     </ul>
-    <div class="casecon">
+    <div class="casecon" v-for="(item,index) in designerList.caseshow" :key="item.index">
       <div class="con-img">
-        <van-image width="100%" height="100%" src="https://img.yzcdn.cn/vant/cat.jpeg" radius="5px"/>
+        <van-image width="100%" height="100%" :src="item.img" radius="7px"/>
       </div>
       <div class="context">
         <div class="context-left">
           <p>
-            <span>慢漫|方界设计作品</span>
-            <span class="context-right"><van-icon name="eye-o" /><span>1642</span></span>
+            <span>{{ item.casetitle }}</span>
+            <span class="context-right"><van-icon name="eye-o" /><span>{{item.popularity}}</span></span>
           </p>
-          <p>114m²/现代简约/三居/25图</p>
+          <p>{{ item.subhase }}</p>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({  
-  
+  props: ["designerList"],
 });
 </script>
 
