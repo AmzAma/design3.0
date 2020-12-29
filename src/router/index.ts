@@ -85,10 +85,24 @@ const routes = [
     name: "Designer",
     props: true,
     component: () => import("../views/Designer.vue"),
+    children:[
+      {
+        path: "/caseexhibition",
+        component: () => import("../views/CaseExhibition.vue"),
+      },
+      {
+        path: "/blogexhibition",
+        component: () => import("../views/BlogExhibition.vue"),
+      },
+    ]
   },
   {
     path: "/caseexhibition",
     component: () => import("../views/CaseExhibition.vue"),
+  },
+  {
+    path: "/blogexhibition",
+    component: () => import("../views/BlogExhibition.vue"),
   },
   {
     path: "/Particular/:particularId",

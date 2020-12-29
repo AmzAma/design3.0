@@ -1,6 +1,6 @@
 <template>
-  <div class="casemain">
-    <ul class="ctop">
+  <div class="blogmain">
+    <ul class="btop">
       <li>120篇</li>
       <li>
         <van-icon name="fire-o" />
@@ -10,15 +10,15 @@
         <span>按时间</span>
       </li>
     </ul>
-    <div class="casecon">
-      <div class="con-img">
+    <div class="blogcon">
+      <div class="blog-img">
         <van-image width="100%" height="100%" src="https://img.yzcdn.cn/vant/cat.jpeg" radius="5px"/>
       </div>
-      <div class="context">
-        <div class="context-left">
+      <div class="blogtext">
+        <div class="blogtext-left">
           <p>
             <span>慢漫|方界设计作品</span>
-            <span class="context-right"><van-icon name="eye-o" /><span>1642</span></span>
+            <span class="blogtext-right"><van-icon name="eye-o" /><span>1642</span></span>
           </p>
           <p>114m²/现代简约/三居/25图</p>
         </div>
@@ -39,9 +39,9 @@ export default defineComponent({
       padding-right: 3px;
       vertical-align: middle;
   }
-  .casemain{
+  .blogmain{
     padding: 10px;
-    .ctop{
+    .btop{
       overflow: hidden;
       li{
           &:nth-child(1){
@@ -60,18 +60,18 @@ export default defineComponent({
           }
       }
     }
-    .casecon{
+    .blogcon{
       padding: 5px 0;
-      .con-img{
+      .blog-img{
         width: 100%;
         height: 170px;
       }
-      .context{
+      .blogtext{
         margin-top: 10px;
         overflow: hidden;
-        .context-left{
+        .blogtext-left{
+          text-align: left;
           p{
-            text-align: left;
             padding: 5px 0;
             &:nth-child(1){
               font-size: 16px;
@@ -82,7 +82,7 @@ export default defineComponent({
             }
           }
         }
-        .context-right{
+        .blogtext-right{
           float: right;
           font-size: 14px;
           color: #999;

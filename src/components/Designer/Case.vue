@@ -8,7 +8,7 @@
     </van-nav-bar>
     <van-swipe :loop="false" :show-indicators="false">
       <van-swipe-item v-for="(item,index) in designerList.caseshow" :key="item.index">
-        <van-image width="100%" radius="5px" :src="item.img" />
+        <van-image width="100%" height="250px" :src="item.img" />
         <div class="case-con">
           <p>{{ item.casetitle }}</p>
           <p>{{ item.subhase}}</p>

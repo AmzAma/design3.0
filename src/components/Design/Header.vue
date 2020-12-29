@@ -1,5 +1,5 @@
 <template>
-  <van-nav-bar title="设计师" :border="false" fixed="true" z-index="2">
+  <van-nav-bar title="设计师" :border="false" :fixed="true" z-index="2">
     <template #right>
       <van-icon name="search" size="22" />
     </template>

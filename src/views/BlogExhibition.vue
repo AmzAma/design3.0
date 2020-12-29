@@ -1,24 +1,24 @@
 <template>
   <div class="csex">
     <van-nav-bar
-      title="案例"
+      title="博文"
       left-arrow
       @click-left="onClickLeft"
     />
-    <c-ex-main />
+    <b-ex-main />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import CExMain from '../components/CaseExhibition/Main.vue'
+import BExMain from '../components/BlogExhibition/Main.vue'
 export default defineComponent({  
   data(){
     return{
     }
   },
   components: {
-    CExMain
+    BExMain
   },
   methods:{
     onClickLeft() {
