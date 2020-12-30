@@ -16,7 +16,7 @@
      <button>关注</button>
       </div>
       <div class="bottom">
-        <div v-for="item in desShowImg[index]" :key="item">
+        <div v-for="item in showArr2[index]" :key="item">
           <van-image :src="item" />
         </div>
       </div>
@@ -33,7 +33,8 @@ export default defineComponent({
   },
   data() {
     return {
-      arr: [] as number[]
+      arr: [] as number[],
+      arr2: [] as number[]
     }
   },
   watch: {
@@ -46,13 +47,19 @@ export default defineComponent({
       return this.arr.map(item => {
         return this.designerList[item]
       })
+    },
+    showArr2(): any[] {
+      return this.arr2.map(item => {
+        return this.desShowImg[item]
+      })
     }
   },
   methods: {
     change() {
       let num: number = Math.floor(Math.random() * (this.designerList.length - 1))
       this.arr = [num, num + 1]
-      console.log('arr', this.arr)
+      let num2: number = Math.floor(Math.random() * (this.desShowImg.length  ))
+      this.arr2 = [num2, num ]
     }
   }
 });

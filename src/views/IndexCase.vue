@@ -1,7 +1,7 @@
 <template>
   <div class="indexcase">
    <Head2 :navList="navList" />
-   <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="130" @refresh="onRefresh">
+   <van-pull-refresh v-model="state.loading" style="min-height: 1vh;" :head-height="130" @refresh="onRefresh">
     <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
     <template #pulling="props">
       <img
