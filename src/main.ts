@@ -31,7 +31,8 @@ import {
   Cell,
   CellGroup,
   Overlay,
-  Uploader
+  Uploader,
+  Popup
 } from 'vant';
 
 
@@ -67,7 +68,7 @@ app.use(Cell);
 app.use(CellGroup);
 app.use(Overlay);
 app.use(Uploader);
-
+app.use(Popup);
 app.use(router);
 app.mount('#app')
 

@@ -95,7 +95,6 @@ export default defineComponent({
       }
       div{
         font-size:10px;
-        width: 100px;
         margin:10px 5px;
         line-height: 70px;
         height:70px;

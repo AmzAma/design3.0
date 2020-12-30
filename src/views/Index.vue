@@ -2,7 +2,7 @@
   <div class="index">
    <Head :navList="navList" />
 
-   <van-pull-refresh v-model="state.loading" style="min-height: 100vh;" :head-height="105" @refresh="onRefresh">
+   <van-pull-refresh v-model="state.loading" style="min-height: 1vh;" :head-height="105" @refresh="onRefresh">
     <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
     <template #pulling="props">
       <img
@@ -57,8 +57,42 @@
      
      <div class="icon">
      <van-icon name="cart-o" />
-     <van-icon name="comment-o" />
-     <van-icon name="star-o" />  
+     <van-icon name="comment-o" is-link @click="showPopup" />
+     <van-icon name="star-o"  /> 
+     <!-- 弹出窗口 -->
+     <van-popup
+     v-model:show="show"
+     closeable
+     round
+     position="bottom"
+     :style="{ height: '60%'}"
+     >
+     全部评论
+     <ul>
+      <li v-for="(item, index) in pendingList" v-bind:key="item.text" id="li">
+       游客: {{ item.text }}
+      <van-icon name="like-o" @click="getred"  v-bind:style="{ color: flag ? 'red':'black' }" />
+      </li>
+    </ul>
+       <van-cell-group id="lt">
+       <van-field
+         center
+         clearable
+         placeholder="主动我们才会有故事哦~"
+         id="ltl"
+         v-model="str"
+         v-on:keyup.13="handleKeyUp"
+       >
+         <template #button > 
+           <van-button
+           size="small"
+           type="primary"
+           v-on:click="handleClick"
+           >发送</van-button>
+        </template>
+       </van-field>
+       </van-cell-group>
+     </van-popup>
      </div>
    </div>
 
@@ -71,20 +105,21 @@ import Swiper from "../components/Index/Swiper.vue";
 import Head from "../components/Index/Head.vue";
 
 
-import { ref } from 'vue';
 import { getBannerListApi, getGridListApi, getDesignListApi } from "../utils/api";
 
 import { Toast } from 'vant'
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive,ref } from 'vue'
 export default defineComponent({
   data() {
     return {
+      flag:false,
       swiperList: [],
       gridList:[],
       detailsList:[],
       particular:[],
       particularId:"",
-      
+      list: [],
+      str: '',
       navList:[
         {
           text: "我的关注",
@@ -130,9 +165,27 @@ export default defineComponent({
 
     goToIndexCase(){
       this.$router.push('/jiaz');
+    },
+    handleClick() {
+      this.list.push({
+      text: this.str,    
+    });
+      this.str = '';
+    },
+    handleKeyUp(e) {
+      this.handleClick();
+    },
+    getred(){
+      this.flag=!this.flag;
     }
   },
-
+      computed: {
+        pendingList() {
+          return this.list.filter(item => {
+            return !item.checked
+          })
+        },
+      },
   components: {
     Swiper,
     Head
@@ -149,10 +202,18 @@ export default defineComponent({
         state.count++;
       }, 1000);
     };
-
+    const show = ref(false);
+    const showPopup = () => {
+      show.value = true;
+    };
+    const value = ref('');
+    
     return {
       state,
       onRefresh,
+      show,
+      showPopup,
+      value
     };
   }
 
@@ -241,6 +302,7 @@ export default defineComponent({
     font-size:30px;
     margin: 10px 0;
   }
+  
   }
   .doge {
     width: 55px;
