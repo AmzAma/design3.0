@@ -12,7 +12,7 @@
       </van-tabbar-item>
     </van-tabbar> -->
 
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" :placeholder="true">
       <van-tabbar-item to="/index">
         <span>首页</span>
         <template #icon="props">
