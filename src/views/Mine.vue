@@ -27,24 +27,24 @@
           <span class="txt">找设计师</span>
         </div>
          <div class="wrop-t">
-          <van-icon name="user-circle-o"/>
+          <van-icon name="newspaper-o"/>
           <span class="txt">提交需求</span>
         </div>
       </div>
       <div class="main">
         <div class="cell">
-          <van-cell title="单元格" is-link />
-          <van-cell title="单元格" is-link />
+          <van-cell title="我的交易" is-link  icon="balance-list-o"/>
+          <van-cell title="我的预约" is-link  icon="comment-o"/>
         </div>
        <div class="cell">
-          <van-cell title="单元格" is-link />
-          <van-cell title="单元格" is-link />
-           <van-cell title="单元格" is-link />
-          <van-cell title="单元格" is-link />
-           <van-cell title="单元格" is-link />
+          <van-cell title="图片" is-link icon="photo"/>
+          <van-cell title="收藏" is-link icon="star"/>
+           <van-cell title="问答" is-link icon="question"/>
+           <van-cell title="好友" is-link icon="friends"/>
+           <van-cell title="金币" is-link icon="gem"/>
        </div>
        <div class="cell">
-          <van-cell title="单元格" is-link />
+          <van-cell title="设置" is-link icon="setting"/>
         </div>
       </div>
     </div>
@@ -142,5 +142,8 @@ export default {
  }
  .cell{
      margin-bottom: 10px;
+     text-align: left;
+     font-size: 14px;
    }
+   
 </style>

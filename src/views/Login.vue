@@ -4,8 +4,20 @@
     <h3>登陆注册</h3>
     <span>未注册用户，验证后即完成注册</span>
     <div class="txt">
-      <van-field v-model="state.tel" type="tel"  placeholder="请输入手机号" />
-      <van-field v-model="state.password" type="password"  placeholder="请输入密码" />
+      <van-field v-model="tel" type="tel"  placeholder="请输入手机号" />
+     <van-field
+        v-model="sms"
+        center
+        clearable
+         required
+        :error-message="err"
+        placeholder="请输入短信验证码"
+      >
+        <template #button>
+          <van-button size="small" type="primary" @click="smsfn">发送验证码</van-button>
+        </template>
+    </van-field>
+
       <van-button type="primary" block @click="loginfn">登录</van-button>
       <div class="text-f"> 
       <span>账号密码登陆</span>
@@ -24,24 +36,53 @@
 
 <script>
 import { reactive } from 'vue';
-import{ getLoginApi }from "../utils/api"
 export default {
-  setup() {
-    const state = reactive({
-      tel: '',
-      password:''
-    });
-    return { state };
+  data() {
+   return{
+     sms:'',
+     tel:'',
+     err:''
+   }
   },
   methods:{
-    async loginfn() {
-      let res= await getLoginApi({
-        tel:this.state.tel,
-        password:this.state.password
-      });
-      if(res){
-        console.log(99999)
-      }
+    smsfn(){
+      fetch("http://www.pudge.wang:3180/register/getCode",{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+        　　phone:this.tel,
+            templateId:"537707"
+        　　})
+      })
+      .then(res => res.json())
+      .then(res=>{console.log(1)})
+    },
+    loginfn(){
+        fetch("http://www.pudge.wang:3180/register",{
+        method:"POST",
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+        　　phone:this.tel,
+            code:this.sms                                                                                     
+        　　})
+      })
+      .then(res => res.json())
+      .then(res=>{
+        console.log(res)
+          if (res.status == 0) {
+          this.$router.replace("/index");
+        }else{
+          if(res.status==1002){
+            this.err=res.msg
+          }else if(res.status==1001){
+          this.err=res.msg
+          }
+        }
+      })   
     }
   }
 };
