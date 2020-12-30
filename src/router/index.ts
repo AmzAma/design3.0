@@ -42,9 +42,10 @@ const routes = [
       {
         path: "/mine",
         component: () => import("../views/Mine.vue"),
-        beforEnter(){
-          
-        }
+      },
+      {
+        path: "/change",
+        component: () => import("../views/change.vue"),
       }
     ],
   },
