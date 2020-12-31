@@ -147,20 +147,23 @@ font-size: 20px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
-#lt{
-  height:50px;
-  width: 100%;
+.index{
+  #lt{
+    height:50px;
+    width: 100%;
+  }
+  #ltl{
+    position: fixed;
+    border-top:1px solid #c0c0c0;
+    height:50px;
+    bottom:0;
+    left: 0;
+  }
+  #li{
+    color: #000;
+    font-size: 20px;
+    line-height: 30px;
+    height: 30px;
+  }
 }
-#ltl{
-  position: absolute;
-  border-top:1px solid #c0c0c0;
-  height:50px;
-  top:350px;
-  left: 0;
-}
-li{
-  color: #000;
-  font-size: 20px;
-  line-height: 30px;
-  height: 30px;
-}
+

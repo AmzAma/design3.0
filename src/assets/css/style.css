@@ -143,20 +143,20 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-#lt {
+.index #lt {
   height: 50px;
   width: 100%;
 }
 
-#ltl {
-  position: absolute;
+.index #ltl {
+  position: fixed;
   border-top: 1px solid #c0c0c0;
   height: 50px;
-  top: 350px;
+  bottom: 0;
   left: 0;
 }
 
-li {
+.index #li {
   color: #000;
   font-size: 20px;
   line-height: 30px;

@@ -139,5 +139,13 @@ export default defineComponent({
       }
     }
   }
+  .doge {
+    width: 45px;
+    height: 40px;
+  }
+  .freshtitle{
+    position: relative;
+    top: -30px;
+  }
 }
 </style>
