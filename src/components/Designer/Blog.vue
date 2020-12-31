@@ -36,7 +36,7 @@ export default defineComponent({
     .van-swipe-item{
       overflow: hidden;
       margin-left: 10px;
-      background: #eee;
+      
       border-radius: 0 0 5px 5px;
     }
   }
@@ -52,6 +52,8 @@ export default defineComponent({
   .blog-con{
     float: left;
     padding: 10px;
+    background: #eee;
+    width: 100%;
     p{
       text-align: left;
       &:nth-child(1){
