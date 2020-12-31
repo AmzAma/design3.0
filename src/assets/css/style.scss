@@ -124,7 +124,8 @@ font-size: 20px;
 }
 
 //首页发布评论
-.van-popup{
+.index{
+  .van-popup{
   text-align: left;
   color: #000;
   font-size: 990;
@@ -147,7 +148,6 @@ font-size: 20px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
-.index{
   #lt{
     height:50px;
     width: 100%;

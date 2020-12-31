@@ -117,7 +117,7 @@
   height: 120px;
 }
 
-.van-popup {
+.index .van-popup {
   text-align: left;
   color: #000;
   font-size: 990;
@@ -125,7 +125,7 @@
   text-indent: 2em;
 }
 
-.van-popup input {
+.index .van-popup input {
   background: #e6e6e6;
   border-radius: 10px;
   color: #000000;
@@ -133,7 +133,7 @@
   text-indent: 2em;
 }
 
-.van-overlay {
+.index .van-overlay {
   position: fixed;
   top: 0px;
   left: 0px;
