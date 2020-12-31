@@ -1,6 +1,6 @@
 <template>
 <div class="login">
-    <van-icon name="cross"  />
+    <van-icon name="cross" @click="cross" />
     <h3>登陆注册</h3>
     <span>未注册用户，验证后即完成注册</span>
     <div class="txt">
@@ -59,6 +59,10 @@ export default {
       .then(res => res.json())
       .then(res=>{console.log(1)})
     },
+    cross(){
+     this.$router.replace("/index");
+    },
+  
     loginfn(){
         fetch("http://www.pudge.wang:3180/register",{
         method:"POST",
@@ -75,6 +79,7 @@ export default {
         console.log(res)
           if (res.status == 0) {
           this.$router.replace("/index");
+          localStorage.setItem("id", 123);
         }else{
           if(res.status==1002){
             this.err=res.msg

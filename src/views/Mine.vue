@@ -1,8 +1,8 @@
 <template>
   <div class="mine">
     <div class="title">
-      <div class="sign">
-        <p>签到</p>
+      <div class="sign" @click="tologin">
+        <p >签到</p>
       </div>
       <van-image
           round
@@ -53,8 +53,8 @@
 
 <script>
 export default {
+ }
 
-}
 </script>
 
 

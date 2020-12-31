@@ -41,12 +41,10 @@ const routes = [
       },
       {
         path: "/mine",
+        name:"Mine",
         component: () => import("../views/Mine.vue"),
       },
-      {
-        path: "/change",
-        component: () => import("../views/change.vue"),
-      }
+      
     ],
   },
   {
@@ -77,14 +75,28 @@ const routes = [
     path: "/Particular/:particularId",
     name: "Particular",
     component: () => import("../views/Particular.vue"),
-  }
+  },
+  {
+        path: "/change",
+        component: () => import("../views/change.vue"),
+      }
 ]
 
-// 3. Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
+
 export const router = createRouter({
   // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
   history: createWebHashHistory(),
-  routes, // short for `routes: routes`
+  routes, // short for `routes: routes`1231231231
 })
+
+router.beforeEach((to, from, next) => {
+  if ( to.name === "Mine") {
+    if (localStorage.getItem("id")) {
+      next();
+    } else {
+      next("/login");
+    }
+  } else {
+    next();
+  }
+});
